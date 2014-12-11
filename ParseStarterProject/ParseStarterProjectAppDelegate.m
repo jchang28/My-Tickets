@@ -37,18 +37,19 @@
     // [PFFacebookUtils initializeFacebook];
     // ****************************************************************************
 
-    [PFUser enableAutomaticUser];
+    //[PFUser enableAutomaticUser];
 
     PFACL *defaultACL = [PFACL ACL];
 
     // If you would like all objects to be private by default, remove this line.
-    [defaultACL setPublicReadAccess:YES];
+    //[defaultACL setPublicReadAccess:YES];
 
     [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
 
     // Override point for customization after application launch.
 
-    self.window.rootViewController = self.viewController;
+    //[self _setupViewControllers];
+    self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
 
     if (application.applicationState != UIApplicationStateBackground) {
@@ -178,6 +179,16 @@
     } else {
         NSLog(@"ParseStarterProject failed to subscribe to push notifications on the broadcast channel.");
     }
+}
+
+#pragma mark -
+#pragma mark Privates - Setup View Controllers
+- (void)_setupViewControllers {
+    self.tabBarController = [[UITabBarController alloc] init];
+    UIViewController *vc1 = [[UIViewController alloc] init];
+    UIViewController *vc2 = [[UIViewController alloc] init];
+    self.tabBarController.viewControllers = @[vc1, vc2];
+    
 }
 
 @end

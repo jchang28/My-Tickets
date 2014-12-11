@@ -9,10 +9,10 @@
 
 @class ParseStarterProjectViewController;
 
-@interface ParseStarterProjectAppDelegate : NSObject <UIApplicationDelegate>
+@interface ParseStarterProjectAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 
-@property (nonatomic, strong) IBOutlet ParseStarterProjectViewController *viewController;
+@property (nonatomic, strong) IBOutlet UITabBarController *tabBarController;
 
 @end
