@@ -15,7 +15,13 @@
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 
-@property (nonatomic, strong) ProjectsViewController *projectsViewController;
+//Tab 0
+@property (nonatomic, strong) UINavigationController *projectsNaviController;
+
+//Tab 1
+//Tab 2
+//Tab 3...
+
 @property (nonatomic, strong) IBOutlet UITabBarController *tabBarController;
 
 @end

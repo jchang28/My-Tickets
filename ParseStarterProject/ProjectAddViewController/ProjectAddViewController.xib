@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectAddViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLB-KN-zPa">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nkg-h3-vuV">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9n-0x-yyu">
+                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7kD-bq-fcX">
+                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYy-Sf-Myl">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" title="Add">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="ibAddProject:" destination="-1" eventType="touchUpInside" id="NcF-98-u3y"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIi-rq-i3Z">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="ibCancel:" destination="-1" eventType="touchUpInside" id="jrB-iF-D16"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="BIi-rq-i3Z" firstAttribute="trailing" secondItem="N9n-0x-yyu" secondAttribute="trailing" id="14n-Me-YXN"/>
+                <constraint firstItem="N9n-0x-yyu" firstAttribute="top" secondItem="Nkg-h3-vuV" secondAttribute="bottom" constant="8" symbolic="YES" id="4aQ-4c-6Yd"/>
+                <constraint firstItem="7kD-bq-fcX" firstAttribute="leading" secondItem="Nkg-h3-vuV" secondAttribute="leading" id="8ig-dc-BJO"/>
+                <constraint firstItem="LLB-KN-zPa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="Dqw-Le-QCO"/>
+                <constraint firstItem="ZYy-Sf-Myl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="FLG-vP-ZEr"/>
+                <constraint firstItem="ZYy-Sf-Myl" firstAttribute="top" secondItem="N9n-0x-yyu" secondAttribute="bottom" constant="8" symbolic="YES" id="K43-Hn-u6V"/>
+                <constraint firstAttribute="trailing" secondItem="BIi-rq-i3Z" secondAttribute="trailing" constant="8" id="NhU-bo-3vV"/>
+                <constraint firstItem="7kD-bq-fcX" firstAttribute="leading" secondItem="LLB-KN-zPa" secondAttribute="leading" id="Xi0-v8-3Xs"/>
+                <constraint firstItem="N9n-0x-yyu" firstAttribute="leading" secondItem="Nkg-h3-vuV" secondAttribute="leading" id="chG-Ki-2Ua"/>
+                <constraint firstItem="N9n-0x-yyu" firstAttribute="leading" secondItem="ZYy-Sf-Myl" secondAttribute="leading" id="gXj-xd-5OM"/>
+                <constraint firstItem="Nkg-h3-vuV" firstAttribute="top" secondItem="7kD-bq-fcX" secondAttribute="bottom" constant="8" symbolic="YES" id="gqN-Uk-DE5"/>
+                <constraint firstItem="ZYy-Sf-Myl" firstAttribute="baseline" secondItem="BIi-rq-i3Z" secondAttribute="baseline" id="h3B-0W-09w"/>
+                <constraint firstItem="7kD-bq-fcX" firstAttribute="top" secondItem="LLB-KN-zPa" secondAttribute="bottom" constant="8" symbolic="YES" id="mhn-f2-p1q"/>
+                <constraint firstItem="7kD-bq-fcX" firstAttribute="trailing" secondItem="N9n-0x-yyu" secondAttribute="trailing" id="ze3-q8-s17"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="LLB-KN-zPa"/>
+                    <exclude reference="Nkg-h3-vuV"/>
+                    <exclude reference="N9n-0x-yyu"/>
+                    <exclude reference="7kD-bq-fcX"/>
+                    <exclude reference="ZYy-Sf-Myl"/>
+                    <exclude reference="BIi-rq-i3Z"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="Dqw-Le-QCO"/>
+                    <exclude reference="8ig-dc-BJO"/>
+                    <exclude reference="Xi0-v8-3Xs"/>
+                    <exclude reference="mhn-f2-p1q"/>
+                    <exclude reference="ze3-q8-s17"/>
+                    <exclude reference="gqN-Uk-DE5"/>
+                    <exclude reference="4aQ-4c-6Yd"/>
+                    <exclude reference="chG-Ki-2Ua"/>
+                    <exclude reference="gXj-xd-5OM"/>
+                    <exclude reference="FLG-vP-ZEr"/>
+                    <exclude reference="K43-Hn-u6V"/>
+                    <exclude reference="h3B-0W-09w"/>
+                    <exclude reference="14n-Me-YXN"/>
+                    <exclude reference="NhU-bo-3vV"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="LLB-KN-zPa"/>
+                    <include reference="Nkg-h3-vuV"/>
+                    <include reference="N9n-0x-yyu"/>
+                    <include reference="7kD-bq-fcX"/>
+                    <include reference="ZYy-Sf-Myl"/>
+                    <include reference="BIi-rq-i3Z"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="Dqw-Le-QCO"/>
+                    <include reference="8ig-dc-BJO"/>
+                    <include reference="Xi0-v8-3Xs"/>
+                    <include reference="mhn-f2-p1q"/>
+                    <include reference="ze3-q8-s17"/>
+                    <include reference="gqN-Uk-DE5"/>
+                    <include reference="4aQ-4c-6Yd"/>
+                    <include reference="chG-Ki-2Ua"/>
+                    <include reference="gXj-xd-5OM"/>
+                    <include reference="FLG-vP-ZEr"/>
+                    <include reference="K43-Hn-u6V"/>
+                    <include reference="h3B-0W-09w"/>
+                    <include reference="14n-Me-YXN"/>
+                    <include reference="NhU-bo-3vV"/>
+                </mask>
+            </variation>
+        </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="J6N-vI-YdN">
+            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <state key="normal" title="Button">
+                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+            </state>
+        </button>
+    </objects>
+</document>

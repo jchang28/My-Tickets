@@ -32,6 +32,8 @@
 		890A91A51A3A845F00B1ED03 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890A91A41A3A845F00B1ED03 /* FacebookSDK.framework */; };
 		890A91A61A3A847000B1ED03 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6372FF551613CC42002132AF /* Social.framework */; };
 		890A91A71A3A847E00B1ED03 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6372FF521613CC3C002132AF /* Accounts.framework */; };
+		890A91AB1A3AD75300B1ED03 /* ProjectAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890A91A91A3AD75300B1ED03 /* ProjectAddViewController.m */; };
+		890A91AC1A3AD75300B1ED03 /* ProjectAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890A91AA1A3AD75300B1ED03 /* ProjectAddViewController.xib */; };
 		89F739591A3A790C005F7E30 /* ProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F739581A3A790C005F7E30 /* ProjectsViewController.m */; };
 		91D261791A36EB67005D713D /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D261781A36EB67005D713D /* libsqlite3.0.dylib */; };
 		C4C51B571613CE0800959FDC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B541613CE0800959FDC /* Default.png */; };
@@ -72,6 +74,9 @@
 		81DDFD1719B4A60300BE649C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		81DDFD1819B4A60300BE649C /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		890A91A41A3A845F00B1ED03 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		890A91A81A3AD75300B1ED03 /* ProjectAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectAddViewController.h; path = ProjectAddViewController/ProjectAddViewController.h; sourceTree = "<group>"; };
+		890A91A91A3AD75300B1ED03 /* ProjectAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectAddViewController.m; path = ProjectAddViewController/ProjectAddViewController.m; sourceTree = "<group>"; };
+		890A91AA1A3AD75300B1ED03 /* ProjectAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectAddViewController.xib; path = ProjectAddViewController/ProjectAddViewController.xib; sourceTree = "<group>"; };
 		89F739571A3A790C005F7E30 /* ProjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectsViewController.h; path = ProjectsViewController/ProjectsViewController.h; sourceTree = "<group>"; };
 		89F739581A3A790C005F7E30 /* ProjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectsViewController.m; path = ProjectsViewController/ProjectsViewController.m; sourceTree = "<group>"; };
 		91D261781A36EB67005D713D /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -195,6 +200,16 @@
 			name = "System Frameworks";
 			sourceTree = "<group>";
 		};
+		890A91AD1A3AD75A00B1ED03 /* ProjectAddViewController */ = {
+			isa = PBXGroup;
+			children = (
+				890A91A81A3AD75300B1ED03 /* ProjectAddViewController.h */,
+				890A91A91A3AD75300B1ED03 /* ProjectAddViewController.m */,
+				890A91AA1A3AD75300B1ED03 /* ProjectAddViewController.xib */,
+			);
+			name = ProjectAddViewController;
+			sourceTree = "<group>";
+		};
 		89B240231A3A51A800F5F8B5 /* App Delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +225,7 @@
 			children = (
 				89F739571A3A790C005F7E30 /* ProjectsViewController.h */,
 				89F739581A3A790C005F7E30 /* ProjectsViewController.m */,
+				890A91AD1A3AD75A00B1ED03 /* ProjectAddViewController */,
 			);
 			name = ProjectsViewController;
 			sourceTree = "<group>";
@@ -268,6 +284,7 @@
 				09ABC07C13A1D52D009C3FCF /* InfoPlist.strings in Resources */,
 				09ABC08513A1D52E009C3FCF /* MainWindow.xib in Resources */,
 				09144A7313C2997E00388B00 /* Entitlements.plist in Resources */,
+				890A91AC1A3AD75300B1ED03 /* ProjectAddViewController.xib in Resources */,
 				C4C51B571613CE0800959FDC /* Default.png in Resources */,
 				C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */,
 				C4C51B591613CE0800959FDC /* Default@2x.png in Resources */,
@@ -298,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				890A91AB1A3AD75300B1ED03 /* ProjectAddViewController.m in Sources */,
 				09ABC07F13A1D52D009C3FCF /* main.m in Sources */,
 				89F739591A3A790C005F7E30 /* ProjectsViewController.m in Sources */,
 				09ABC08213A1D52D009C3FCF /* ParseStarterProjectAppDelegate.m in Sources */,

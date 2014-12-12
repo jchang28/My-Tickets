@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <ParseUI/ParseUI.h>
 
-@interface ProjectsViewController : PFQueryTableViewController
+#import "ProjectAddViewController.h"
+
+@protocol ProjectsViewControllerDelegate <NSObject>
+- (void)didAddProject:(PFObject *)project;
+- (void)didCancelAddProject;
+@end
+
+@interface ProjectsViewController : PFQueryTableViewController <ProjectsViewControllerDelegate>
 
 @end

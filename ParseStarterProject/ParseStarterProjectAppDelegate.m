@@ -213,7 +213,8 @@
 - (void)_setupRootWithTabBarViewController {
     ProjectsViewController *projectsViewController = [[ProjectsViewController alloc] initWithClassName:@"Project"];
     projectsViewController.textKey = @"ProjectName";
-    self.tabBarController.viewControllers = @[projectsViewController];
+    self.projectsNaviController = [[UINavigationController alloc] initWithRootViewController:projectsViewController];
+    self.tabBarController.viewControllers = @[self.projectsNaviController];
     
     self.window.rootViewController = self.tabBarController;
 }
