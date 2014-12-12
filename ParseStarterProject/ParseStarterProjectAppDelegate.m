@@ -48,8 +48,15 @@
 
     // Override point for customization after application launch.
 
-    //[self _setupViewControllers];
-    self.window.rootViewController = self.tabBarController;
+    //Moved within _setupViewControllers...
+    //self.window.rootViewController = self.tabBarController;
+    if([PFUser currentUser]) {
+        [self _setupRootWithTabBarViewController];
+    }
+    else {
+        [self _setupRootWithSignInViewController];
+    }
+
     [self.window makeKeyAndVisible];
 
     if (application.applicationState != UIApplicationStateBackground) {
@@ -171,6 +178,26 @@
      */
 }
 
+#pragma mark -
+#pragma mark PFLogInViewController Obligations
+- (void)logInViewController:(PFLogInViewController *)logInController
+               didLogInUser:(PFUser *)user {
+    [self _setupRootWithTabBarViewController];
+}
+
+- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
+}
+#pragma mark -
+#pragma mark PFSignUpViewController Obligations
+- (void)signUpViewController:(PFSignUpViewController *)signUpController
+               didSignUpUser:(PFUser *)user {
+    [self _setupRootWithTabBarViewController];
+}
+
+- (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController {
+}
+
+
 #pragma mark - ()
 
 - (void)subscribeFinished:(NSNumber *)result error:(NSError *)error {
@@ -183,12 +210,20 @@
 
 #pragma mark -
 #pragma mark Privates - Setup View Controllers
-- (void)_setupViewControllers {
-    self.tabBarController = [[UITabBarController alloc] init];
-    UIViewController *vc1 = [[UIViewController alloc] init];
-    UIViewController *vc2 = [[UIViewController alloc] init];
-    self.tabBarController.viewControllers = @[vc1, vc2];
+- (void)_setupRootWithTabBarViewController {
+    ProjectsViewController *projectsViewController = [[ProjectsViewController alloc] initWithClassName:@"Project"];
+    projectsViewController.textKey = @"ProjectName";
+    self.tabBarController.viewControllers = @[projectsViewController];
     
+    self.window.rootViewController = self.tabBarController;
+}
+
+- (void)_setupRootWithSignInViewController {
+    PFLogInViewController *parseLoginViewController = [[PFLogInViewController alloc] init];
+    parseLoginViewController.delegate = self;
+    parseLoginViewController.signUpController.delegate = self;
+    
+    self.window.rootViewController = parseLoginViewController;
 }
 
 @end
