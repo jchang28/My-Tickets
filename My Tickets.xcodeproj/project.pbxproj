@@ -77,6 +77,10 @@
 		890A91A81A3AD75300B1ED03 /* ProjectAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectAddViewController.h; path = ProjectAddViewController/ProjectAddViewController.h; sourceTree = "<group>"; };
 		890A91A91A3AD75300B1ED03 /* ProjectAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectAddViewController.m; path = ProjectAddViewController/ProjectAddViewController.m; sourceTree = "<group>"; };
 		890A91AA1A3AD75300B1ED03 /* ProjectAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectAddViewController.xib; path = ProjectAddViewController/ProjectAddViewController.xib; sourceTree = "<group>"; };
+		89AD32211A3BA2F900ECD505 /* ProjectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProjectModel.h; path = Models/ProjectModel.h; sourceTree = "<group>"; };
+		89AD32231A3BA6F700ECD505 /* ParseModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ParseModels.h; path = Models/ParseModels.h; sourceTree = "<group>"; };
+		89AD32241A3BA80700ECD505 /* TicketModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TicketModel.h; path = Models/TicketModel.h; sourceTree = "<group>"; };
+		89AD32251A3BA81B00ECD505 /* DiscussionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DiscussionModel.h; path = Models/DiscussionModel.h; sourceTree = "<group>"; };
 		89F739571A3A790C005F7E30 /* ProjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectsViewController.h; path = ProjectsViewController/ProjectsViewController.h; sourceTree = "<group>"; };
 		89F739581A3A790C005F7E30 /* ProjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectsViewController.m; path = ProjectsViewController/ProjectsViewController.m; sourceTree = "<group>"; };
 		91D261781A36EB67005D713D /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -154,6 +158,7 @@
 		09ABC07713A1D52D009C3FCF /* ParseStarterProject */ = {
 			isa = PBXGroup;
 			children = (
+				89AD32221A3BA31000ECD505 /* Models */,
 				89B240231A3A51A800F5F8B5 /* App Delegate */,
 				09ABC07813A1D52D009C3FCF /* Supporting Files */,
 				89F7395A1A3A7913005F7E30 /* ProjectsViewController */,
@@ -208,6 +213,17 @@
 				890A91AA1A3AD75300B1ED03 /* ProjectAddViewController.xib */,
 			);
 			name = ProjectAddViewController;
+			sourceTree = "<group>";
+		};
+		89AD32221A3BA31000ECD505 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				89AD32231A3BA6F700ECD505 /* ParseModels.h */,
+				89AD32211A3BA2F900ECD505 /* ProjectModel.h */,
+				89AD32241A3BA80700ECD505 /* TicketModel.h */,
+				89AD32251A3BA81B00ECD505 /* DiscussionModel.h */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		89B240231A3A51A800F5F8B5 /* App Delegate */ = {
