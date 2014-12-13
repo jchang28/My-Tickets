@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "ProjectModel.h"
 
 @protocol ProjectsViewControllerDelegate;
 
@@ -14,6 +16,9 @@
 
 
 @property (nonatomic, weak) id<ProjectsViewControllerDelegate> delegate;
+
+@property (nonatomic, strong) IBOutlet UITextField *projectNameTextField;
+@property (nonatomic, strong) IBOutlet UITextField *projectDescriptionTextField;
 
 - (IBAction)ibAddProject:(id)sender;
 - (IBAction)ibCancel:(id)sender;

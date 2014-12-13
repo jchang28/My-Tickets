@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectAddViewController">
             <connections>
+                <outlet property="projectDescriptionTextField" destination="N9n-0x-yyu" id="mOt-WI-IB5"/>
+                <outlet property="projectNameTextField" destination="7kD-bq-fcX" id="MwT-Qu-Hd6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
