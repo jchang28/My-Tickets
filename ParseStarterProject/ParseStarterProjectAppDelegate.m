@@ -6,6 +6,7 @@
 //
 
 #import <Parse/Parse.h>
+#import "ParseModels.h"
 
 // If you want to use any of the UI components, uncomment this line
 // #import <ParseUI/ParseUI.h>
@@ -211,8 +212,10 @@
 #pragma mark -
 #pragma mark Privates - Setup View Controllers
 - (void)_setupRootWithTabBarViewController {
-    ProjectsViewController *projectsViewController = [[ProjectsViewController alloc] initWithClassName:@"Project"];
-    projectsViewController.textKey = @"ProjectName";
+    //Not sure if these will be kept if the query is overriden for this
+    //ParseQueryTable based view controller...
+    ProjectsViewController *projectsViewController = [[ProjectsViewController alloc] initWithClassName:MTParseProjectClassName];
+    projectsViewController.textKey = MTParseProjectNameKey;
     self.projectsNaviController = [[UINavigationController alloc] initWithRootViewController:projectsViewController];
     self.tabBarController.viewControllers = @[self.projectsNaviController];
     
