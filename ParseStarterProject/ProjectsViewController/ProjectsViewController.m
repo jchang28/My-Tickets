@@ -19,6 +19,24 @@
 }
 
 #pragma mark -
+#pragma makr Parse Overrides
+/**
+ * Not sure if this override will override the class name (can the constructed)
+ * for this query table set at instantiated (at the app delegate level..).
+ *
+ * Not sure if the fetched names will be kepted (set at app delegate level...).
+ */
+- (PFQuery *)queryForTable {
+    PFQuery *queryForProjectMembership = [PFQuery queryWithClassName:MTParseProjectClassName];
+
+    //Find in all Projects, where the member is equal to this current user....(I hope it is not an exclusive...)
+    [queryForProjectMembership whereKey:MTParseProjectMembershipKey
+                                equalTo:[PFUser currentUser]];
+    
+    return queryForProjectMembership;
+}
+
+#pragma mark -
 #pragma mark Privates
 #pragma mark Private - Add button
 - (void)_setupUI {
