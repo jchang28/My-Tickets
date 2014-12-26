@@ -15,6 +15,9 @@
  *
  * Makes use of the MTAutoPreferredWidthLabel that can properly handle multiline
  * and orientation changes.
+ *
+ * q: What is the difference between Table View Cell's Row Height vs.
+ * View's Height? (in the xib/interface builder?)
  */
 @interface MTGenericCell : UITableViewCell
 

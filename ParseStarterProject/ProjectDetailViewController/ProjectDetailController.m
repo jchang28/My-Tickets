@@ -132,8 +132,9 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)_configureCell:(MTGenericCell *)cell
            atIndexPath:(NSIndexPath *)indexPath {
 
-    cell.titleLabel.text = @"Gibberish lines and more lines.";
-    cell.subtitleLabel.text = @"The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc. ";
+    cell.titleLabel.text = @"Gibberish lines and more lines.  Gibberish lines and more lines.  Gibberish lines and more lines.  Gibberish lines and more lines.  Gibberish lines and more lines.  ";
+    cell.subtitleLabel.text = @"The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.  The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.  The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.
+    ";
 }
 
 #pragma mark Private - Cell height calculations
