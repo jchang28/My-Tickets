@@ -7,6 +7,7 @@
 //
 
 #import "ProjectsViewController.h"
+#import "ProjectDetailController.h"
 
 @implementation ProjectsViewController
 
@@ -16,6 +17,20 @@
     [super viewDidLoad];
     
     [self _setupUI];
+}
+
+#pragma mark Overrides - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView
+didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PFObject *project = [self objectAtIndexPath:indexPath];
+    [self _debug:project];
+    
+    ProjectDetailController *projectDetailController = [[ProjectDetailController alloc] initWithNibName:@"ProjectDetailController"
+                                                                                                 bundle:nil];
+    projectDetailController.project = project;
+    
+    [self.navigationController pushViewController:projectDetailController
+                                         animated:YES];
 }
 
 #pragma mark -
@@ -47,6 +62,11 @@
                                                                                action:@selector(ibAddProject:)];
     
     self.navigationItem.rightBarButtonItem = addButton;
+}
+
+- (void)_debug:(PFObject *)project {
+    NSLog(@"Project name[%@].", [project objectForKey:MTParseProjectNameKey]);
+    NSLog(@"Project description[%@}.", [project objectForKey:MTParseProjectDescriptionKey]);
 }
 
 
