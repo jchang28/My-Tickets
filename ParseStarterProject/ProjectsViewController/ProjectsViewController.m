@@ -21,9 +21,11 @@
 
 #pragma mark Overrides - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView
-didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PFObject *project = [self objectAtIndexPath:indexPath];
+    
     [self _debug:project];
+
     
     ProjectDetailController *projectDetailController = [[ProjectDetailController alloc] initWithNibName:@"ProjectDetailController"
                                                                                                  bundle:nil];
@@ -90,6 +92,7 @@ didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)didAddProject:(PFObject *)project {
     [self dismissViewControllerAnimated:YES
                              completion:nil];
+    [self loadObjects];
 }
 
 - (void)didCancelAddProject {
