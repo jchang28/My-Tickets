@@ -25,6 +25,8 @@
 		6AA3DEAC1A4E0823008697B7 /* MTGenericCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA3DEAB1A4E0823008697B7 /* MTGenericCell.m */; };
 		6AA3DEB11A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA3DEB01A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m */; };
 		6AA3DEB61A4E0D71008697B7 /* MTGenericCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA3DEB41A4E0D71008697B7 /* MTGenericCell.xib */; };
+		6AA3DEBB1A5203C1008697B7 /* MTGenericDetailedFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA3DEB91A5203C1008697B7 /* MTGenericDetailedFieldController.m */; };
+		6AA3DEBC1A5203C1008697B7 /* MTGenericDetailedFieldController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA3DEBA1A5203C1008697B7 /* MTGenericDetailedFieldController.xib */; };
 		743D7B6D157DA60100084B67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743D7B6C157DA60100084B67 /* CoreGraphics.framework */; };
 		811B095C1A09503D008B3393 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811B095B1A09503D008B3393 /* ParseUI.framework */; };
 		817AD67C196B009E0014C796 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817AD67B196B009E0014C796 /* Bolts.framework */; };
@@ -76,6 +78,9 @@
 		6AA3DEAF1A4E08BE008697B7 /* MTAutoPreferredWidthLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTAutoPreferredWidthLabel.h; path = Common/UI/MTAutoPreferredWidthLabel/MTAutoPreferredWidthLabel.h; sourceTree = "<group>"; };
 		6AA3DEB01A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTAutoPreferredWidthLabel.m; path = Common/UI/MTAutoPreferredWidthLabel/MTAutoPreferredWidthLabel.m; sourceTree = "<group>"; };
 		6AA3DEB41A4E0D71008697B7 /* MTGenericCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MTGenericCell.xib; path = Common/UI/MTGenericCell/MTGenericCell.xib; sourceTree = "<group>"; };
+		6AA3DEB81A5203C1008697B7 /* MTGenericDetailedFieldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTGenericDetailedFieldController.h; path = Common/UI/MTGenericDetailedFieldController/MTGenericDetailedFieldController.h; sourceTree = "<group>"; };
+		6AA3DEB91A5203C1008697B7 /* MTGenericDetailedFieldController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTGenericDetailedFieldController.m; path = Common/UI/MTGenericDetailedFieldController/MTGenericDetailedFieldController.m; sourceTree = "<group>"; };
+		6AA3DEBA1A5203C1008697B7 /* MTGenericDetailedFieldController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MTGenericDetailedFieldController.xib; path = Common/UI/MTGenericDetailedFieldController/MTGenericDetailedFieldController.xib; sourceTree = "<group>"; };
 		743D7B6C157DA60100084B67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		811B095B1A09503D008B3393 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		817AD67B196B009E0014C796 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -214,6 +219,7 @@
 		6AA3DEA91A4E0798008697B7 /* Common UI */ = {
 			isa = PBXGroup;
 			children = (
+				6AA3DEB71A520343008697B7 /* MTGenericDetailedFieldContoller */,
 				6AA3DEAE1A4E0832008697B7 /* MTAutoPreferredWidthLabel */,
 				6AA3DEAD1A4E0828008697B7 /* MTGenericCell */,
 			);
@@ -237,6 +243,16 @@
 				6AA3DEB01A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m */,
 			);
 			name = MTAutoPreferredWidthLabel;
+			sourceTree = "<group>";
+		};
+		6AA3DEB71A520343008697B7 /* MTGenericDetailedFieldContoller */ = {
+			isa = PBXGroup;
+			children = (
+				6AA3DEB81A5203C1008697B7 /* MTGenericDetailedFieldController.h */,
+				6AA3DEB91A5203C1008697B7 /* MTGenericDetailedFieldController.m */,
+				6AA3DEBA1A5203C1008697B7 /* MTGenericDetailedFieldController.xib */,
+			);
+			name = MTGenericDetailedFieldContoller;
 			sourceTree = "<group>";
 		};
 		81A6CA5E1A2EA0B800297C39 /* System Frameworks */ = {
@@ -371,6 +387,7 @@
 				89D345FC1A4D42AE0006801C /* ProjectDetailController.xib in Resources */,
 				09144A7313C2997E00388B00 /* Entitlements.plist in Resources */,
 				6AA3DEB61A4E0D71008697B7 /* MTGenericCell.xib in Resources */,
+				6AA3DEBC1A5203C1008697B7 /* MTGenericDetailedFieldController.xib in Resources */,
 				890A91AC1A3AD75300B1ED03 /* ProjectAddViewController.xib in Resources */,
 				C4C51B571613CE0800959FDC /* Default.png in Resources */,
 				C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */,
@@ -405,6 +422,7 @@
 				890A91AB1A3AD75300B1ED03 /* ProjectAddViewController.m in Sources */,
 				09ABC07F13A1D52D009C3FCF /* main.m in Sources */,
 				89F739591A3A790C005F7E30 /* ProjectsViewController.m in Sources */,
+				6AA3DEBB1A5203C1008697B7 /* MTGenericDetailedFieldController.m in Sources */,
 				09ABC08213A1D52D009C3FCF /* ParseStarterProjectAppDelegate.m in Sources */,
 				6AA3DEB11A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m in Sources */,
 				6AA3DEAC1A4E0823008697B7 /* MTGenericCell.m in Sources */,

@@ -8,12 +8,14 @@
 
 #import "ProjectDetailController.h"
 #import "MTGenericCell.h"
+#import "MTGenericDetailedFieldController.h"
 
 @interface ProjectDetailController ()
 
 @end
 
 static NSString * const MTGenericCellIdentifier = @"MTGenericCell";
+static NSString * const MTGenericDetailedFieldControllerNib = @"MTGenericDetailedFieldController";
 
 @implementation ProjectDetailController
 
@@ -126,6 +128,15 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self _heightForRowAtIndexPath:indexPath];
 }
 
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    MTGenericDetailedFieldController *detailedFieldController = [[MTGenericDetailedFieldController alloc] initWithNibName:MTGenericDetailedFieldControllerNib
+                                                                                                                   bundle:nil];
+    
+    [self.navigationController pushViewController:detailedFieldController
+                                         animated:YES];
+}
+
 #pragma mark -
 #pragma mark Privates
 #pragma mark Private - Cell presentation configuration from model
@@ -133,8 +144,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
            atIndexPath:(NSIndexPath *)indexPath {
 
     cell.titleLabel.text = @"Gibberish lines and more lines.  Gibberish lines and more lines.  Gibberish lines and more lines.  Gibberish lines and more lines.  Gibberish lines and more lines.  ";
-    cell.subtitleLabel.text = @"The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.  The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.  The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.
-    ";
+    cell.subtitleLabel.text = @"The content of the gibberish lines and more lines, etc, etc. The content of the  lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.  The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.  The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.";
 }
 
 #pragma mark Private - Cell height calculations
