@@ -10,4 +10,6 @@
 
 @interface MTGenericDetailedFieldController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UITextView *fieldValueTextView;
+
 @end

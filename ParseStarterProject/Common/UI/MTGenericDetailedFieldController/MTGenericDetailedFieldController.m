@@ -14,9 +14,34 @@
 
 @implementation MTGenericDetailedFieldController
 
+#pragma mark -
+#pragma mark Initializers
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil
+                         bundle:(NSBundle *)nibBundleOrNil
+                     fieldTitle:(NSString *)fieldTitle
+                     fieldValue:(NSString *)fieldValue {
+    
+    self = [super initWithNibName:nibNameOrNil
+                           bundle:nibBundleOrNil];
+    
+    if(self) {
+        self.title = fieldTitle;
+        [_fieldValueTextView setText:fieldValue];
+
+    }
+    
+    return self;
+}
+
+
+
+#pragma mark -
+#pragma mark Overrides
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.fieldValueTextView.text = @"gibberish...";
 }
 
 - (void)didReceiveMemoryWarning {

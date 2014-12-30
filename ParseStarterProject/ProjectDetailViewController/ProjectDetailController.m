@@ -15,7 +15,7 @@
 @end
 
 static NSString * const MTGenericCellIdentifier = @"MTGenericCell";
-static NSString * const MTGenericDetailedFieldControllerNib = @"MTGenericDetailedFieldController";
+//static NSString * const MTGenericDetailedFieldControllerNib = @"MTGenericDetailedFieldController";
 
 @implementation ProjectDetailController
 
@@ -130,8 +130,17 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    MTGenericDetailedFieldController *detailedFieldController = [[MTGenericDetailedFieldController alloc] initWithNibName:MTGenericDetailedFieldControllerNib
+    MTGenericDetailedFieldController *detailedFieldController = [[MTGenericDetailedFieldController alloc] initWithNibName:@"MTGenericDetailedFieldController"
                                                                                                                    bundle:nil];
+    
+    NSLog(@"value is [%@].", detailedFieldController.fieldValueTextView.text);
+    
+    
+    
+                                                                 
+    
+                                                                 
+
     
     [self.navigationController pushViewController:detailedFieldController
                                          animated:YES];
