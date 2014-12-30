@@ -10,6 +10,10 @@
 
 @interface MTGenericDetailedFieldController ()
 
+@property (nonatomic, strong) NSString *fieldName;
+@property (nonatomic, strong) NSString *fieldValue;
+@property (nonatomic, strong) PFObject *parseProjectModel;
+
 @end
 
 @implementation MTGenericDetailedFieldController
@@ -18,16 +22,17 @@
 #pragma mark Initializers
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil
                          bundle:(NSBundle *)nibBundleOrNil
-                     fieldTitle:(NSString *)fieldTitle
-                     fieldValue:(NSString *)fieldValue {
+                     fieldName:(NSString *)fieldName
+                     fieldValue:(NSString *)fieldValue
+              parseProjectModel:(PFObject *)parseProjectModel {
     
     self = [super initWithNibName:nibNameOrNil
                            bundle:nibBundleOrNil];
     
     if(self) {
-        self.title = fieldTitle;
-        [_fieldValueTextView setText:fieldValue];
-
+        _fieldName = [NSString stringWithString:fieldName];
+        _fieldValue = [NSString stringWithString:fieldValue];
+        _parseProjectModel = parseProjectModel;
     }
     
     return self;
@@ -41,13 +46,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.fieldValueTextView.text = @"gibberish...";
+    [self _setupUI];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation
@@ -58,5 +65,29 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark -
+#pragma mark Privates
+- (void)_setupUI {
+    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                                                                                target:self
+                                                                                action:@selector(ibSaveField)];
+    self.navigationItem.rightBarButtonItem = saveButton;
+    
+    self.title = self.fieldName;
+    self.fieldValueTextView.text = self.fieldValue;
+}
+
+- (void)_saveFieldValueToParse {
+    self.parseProjectModel[self.fieldName] = self.fieldValue;
+}
+
+#pragma mark -
+#pragma mark IBActions
+- (void)ibSaveField:(id)sender {
+    self.fieldValue = self.fieldValueTextView.text;
+    
+    [self _saveFieldValueToParse];
+}
 
 @end

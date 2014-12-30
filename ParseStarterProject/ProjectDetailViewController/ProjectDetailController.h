@@ -12,6 +12,6 @@
 
 @interface ProjectDetailController : UITableViewController
 
-@property (nonatomic, strong) PFObject *project;
+@property (nonatomic, strong) PFObject *parseProjectModel;
 
 @end

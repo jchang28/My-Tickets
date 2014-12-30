@@ -178,8 +178,8 @@
 			children = (
 				6AA3DEA81A4E0789008697B7 /* Common */,
 				89B240231A3A51A800F5F8B5 /* App Delegate */,
-				09ABC07813A1D52D009C3FCF /* Supporting Files */,
 				6AA3DEA71A4E077C008697B7 /* View Controllers */,
+				09ABC07813A1D52D009C3FCF /* Supporting Files */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";

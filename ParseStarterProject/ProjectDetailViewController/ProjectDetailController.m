@@ -131,17 +131,10 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MTGenericDetailedFieldController *detailedFieldController = [[MTGenericDetailedFieldController alloc] initWithNibName:@"MTGenericDetailedFieldController"
-                                                                                                                   bundle:nil];
-    
-    NSLog(@"value is [%@].", detailedFieldController.fieldValueTextView.text);
-    
-    
-    
-                                                                 
-    
-                                                                 
-
-    
+                                                                                                                   bundle:nil
+                                                                                                                fieldName:@"abc"
+                                                                                                               fieldValue:@"xyz"
+                                                                                                        parseProjectModel:self.parseProjectModel];
     [self.navigationController pushViewController:detailedFieldController
                                          animated:YES];
 }
