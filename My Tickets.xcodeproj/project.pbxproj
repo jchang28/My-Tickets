@@ -325,8 +325,8 @@
 			children = (
 				89F739571A3A790C005F7E30 /* ProjectsViewController.h */,
 				89F739581A3A790C005F7E30 /* ProjectsViewController.m */,
-				890A91AD1A3AD75A00B1ED03 /* ProjectAddViewController */,
 				89D345F71A4D41D50006801C /* ProjectDetailController */,
+				890A91AD1A3AD75A00B1ED03 /* ProjectAddViewController */,
 			);
 			name = ProjectsViewController;
 			sourceTree = "<group>";

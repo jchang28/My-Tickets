@@ -28,8 +28,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     
     ProjectDetailController *projectDetailController = [[ProjectDetailController alloc] initWithNibName:@"ProjectDetailController"
-                                                                                                 bundle:nil];
-    projectDetailController.parseProjectModel = project;
+                                                                                                 bundle:nil
+                                                                                      parseProjectModel:project];
     
     [self.navigationController pushViewController:projectDetailController
                                          animated:YES];

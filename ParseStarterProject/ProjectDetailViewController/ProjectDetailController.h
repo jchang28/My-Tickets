@@ -12,6 +12,8 @@
 
 @interface ProjectDetailController : UITableViewController
 
-@property (nonatomic, strong) PFObject *parseProjectModel;
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil
+                         bundle:(NSBundle *)nibBundleOrNil
+              parseProjectModel:(PFObject *)parseProjectMode;
 
 @end

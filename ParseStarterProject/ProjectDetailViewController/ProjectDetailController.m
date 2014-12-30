@@ -12,12 +12,29 @@
 
 @interface ProjectDetailController ()
 
+@property (nonatomic, strong) PFObject *parseProjectModel;
+@property (nonatomic, strong) NSArray *interestedParseFields;
+
 @end
 
 static NSString * const MTGenericCellIdentifier = @"MTGenericCell";
 //static NSString * const MTGenericDetailedFieldControllerNib = @"MTGenericDetailedFieldController";
 
 @implementation ProjectDetailController
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil
+                         bundle:(NSBundle *)nibBundleOrNil
+              parseProjectModel:(PFObject *)parseProjectMode {
+    
+    self = [super initWithNibName:nibNameOrNil
+                           bundle:nibBundleOrNil];
+    
+    if(self) {
+        _parseProjectModel = parseProjectMode;
+    }
+    
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,6 +44,10 @@ static NSString * const MTGenericCellIdentifier = @"MTGenericCell";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    //0.    Setup interested fields to retrieve from parse to present
+    [self _setupInterestedParseFields];
     
     //1.    Register the custom cell we are using.
     [self.tableView registerNib:[UINib nibWithNibName:MTGenericCellIdentifier
@@ -47,7 +68,7 @@ static NSString * const MTGenericCellIdentifier = @"MTGenericCell";
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [self.interestedParseFields count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -144,9 +165,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark Private - Cell presentation configuration from model
 - (void)_configureCell:(MTGenericCell *)cell
            atIndexPath:(NSIndexPath *)indexPath {
+    
+    cell.titleLabel.text = self.interestedParseFields[indexPath.row];
+    cell.subtitleLabel.text = self.parseProjectModel[self.interestedParseFields[indexPath.row]];
+    
 
-    cell.titleLabel.text = @"Gibberish lines and more lines.  Gibberish lines and more lines.  Gibberish lines and more lines.  Gibberish lines and more lines.  Gibberish lines and more lines.  ";
-    cell.subtitleLabel.text = @"The content of the gibberish lines and more lines, etc, etc. The content of the  lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.  The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.  The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.";
+//    Test data to test presentation of the cells.
+//    cell.titleLabel.text = @"Gibberish lines and more lines.  Gibberish lines and more lines.  Gibberish lines and more lines.  Gibberish lines and more lines.  Gibberish lines and more lines.  ";
+//    cell.subtitleLabel.text = @"The content of the gibberish lines and more lines, etc, etc. The content of the  lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.  The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.  The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc. The content of the gibberish lines and more lines, etc, etc.";
 }
 
 #pragma mark Private - Cell height calculations
@@ -184,6 +210,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
              atIndexPath:indexPath];
     
     return [self _calculateHeightForConfiguredSizingCell:sizingCell];
+}
+
+#pragma mark Private - Setup data source / fields we are interested in
+- (void)_setupInterestedParseFields {
+    self.interestedParseFields = [NSArray arrayWithObjects:MTParseProjectNameKey, MTParseProjectDescriptionKey, nil];
+    
 }
 
 
