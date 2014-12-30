@@ -71,7 +71,7 @@
 - (void)_setupUI {
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave
                                                                                 target:self
-                                                                                action:@selector(ibSaveField)];
+                                                                                action:@selector(ibSaveField:)];
     self.navigationItem.rightBarButtonItem = saveButton;
     
     self.title = self.fieldName;
