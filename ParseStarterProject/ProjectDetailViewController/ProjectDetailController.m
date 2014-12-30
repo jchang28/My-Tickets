@@ -153,8 +153,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MTGenericDetailedFieldController *detailedFieldController = [[MTGenericDetailedFieldController alloc] initWithNibName:@"MTGenericDetailedFieldController"
                                                                                                                    bundle:nil
-                                                                                                                fieldName:@"abc"
-                                                                                                               fieldValue:@"xyz"
+                                                                                                                fieldName:self.interestedParseFields[indexPath.row]
+                                                                                                               fieldValue:self.parseProjectModel[self.interestedParseFields[indexPath.row]]
                                                                                                         parseProjectModel:self.parseProjectModel];
     [self.navigationController pushViewController:detailedFieldController
                                          animated:YES];
