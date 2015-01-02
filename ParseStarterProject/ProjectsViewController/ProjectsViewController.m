@@ -27,10 +27,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [self _debug:project];
     
-    ProjectContentsController *viewController = [[ProjectContentsController alloc] initWithNibName:@"ProjectContentsController"
+    ProjectContentsController *projectContentsController = [[ProjectContentsController alloc] initWithNibName:@"ProjectContentsController"
                                                                                             bundle:nil];
+    projectContentsController.project = project;
     
-    [self.navigationController pushViewController:viewController
+    [self.navigationController pushViewController:projectContentsController
                                          animated:YES];
 
     /*
