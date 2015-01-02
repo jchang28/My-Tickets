@@ -142,10 +142,25 @@ heightForHeaderInSection:(NSInteger)section {
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ProjectTicketsController *ticketsController = [[ProjectTicketsController alloc] initWithClassName:MTParseTicketClassName];
     
-    [self.navigationController pushViewController:ticketsController
-                                         animated:YES];
+    switch (indexPath.row) {
+        case PROJECT_CONTENT_SECTION_TICKETS: {
+            ProjectTicketsController *ticketsController = [[ProjectTicketsController alloc] initWithClassName:MTParseTicketClassName];
+            
+            [self.navigationController pushViewController:ticketsController
+                                                 animated:YES];
+        }
+            break;
+            
+        case PROJECT_CONTENT_SECTION_REPORTS:
+            break;
+            
+        case PROJECT_CONTENT_SECTION_MEMBERS:
+            break;
+            
+        default:
+            break;
+    }
 }
 
 
