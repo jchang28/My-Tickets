@@ -12,6 +12,9 @@
 
 @end
 
+static NSString * const ContentHeaderIdentifier = @"header";
+static NSString * const ContentCellIdentifier = @"cell";
+
 @implementation ProjectContentsController
 
 - (void)viewDidLoad {
@@ -22,9 +25,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView registerClass:[UITableViewHeaderFooterView class]
+forHeaderFooterViewReuseIdentifier:ContentHeaderIdentifier];
     
     [self.tableView registerClass:[UITableViewCell class]
-           forCellReuseIdentifier:@"cell"];
+           forCellReuseIdentifier:ContentCellIdentifier];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,13 +39,14 @@
 
 #pragma mark -
 #pragma mark UITableViewDelegate obligations
-- (void)tableView:(UITableView *)tableView
-willDisplayHeaderView:(UIView *)view
-       forSection:(NSInteger)section {
+- (UIView *)tableView:(UITableView *)tableView
+viewForHeaderInSection:(NSInteger)section {
+    
+    UIView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:ContentHeaderIdentifier];
     
     if([view isKindOfClass:[UITableViewHeaderFooterView class]]) {
         UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-
+        
         switch (section) {
             case PROJECT_CONTENT_SECTION_TICKETS:
                 header.textLabel.text = PROJECT_CONTENT_SECTION_TICKETS_HEADER;
@@ -56,9 +62,12 @@ willDisplayHeaderView:(UIView *)view
                 break;
         }
     }
+    
+    return view;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+- (CGFloat)tableView:(UITableView *)tableView
+heightForHeaderInSection:(NSInteger)section {
     return 20.0f;
 }
 
@@ -78,8 +87,10 @@ willDisplayHeaderView:(UIView *)view
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ContentCellIdentifier
                                                             forIndexPath:indexPath];
+    
+    //todo...
     
     return cell;
 }
