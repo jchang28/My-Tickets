@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 #define PROJECT_CONTENT_SECTION_COUNT           3
 #define PROJECT_CONTENT_SECTION_TICKETS         0
@@ -18,5 +19,7 @@
 #define PROJECT_CONTENT_SECTION_MEMBERS_HEADER  @"Members"
 
 @interface ProjectContentsController : UITableViewController
+
+@property (nonatomic, strong) PFObject *project;
 
 @end

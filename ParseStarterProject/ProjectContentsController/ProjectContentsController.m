@@ -7,6 +7,9 @@
 //
 
 #import "ProjectContentsController.h"
+#import "ProjectTicketsController.h"
+#import "ProjectModel.h"
+#import "TicketModel.h"
 
 @interface ProjectContentsController ()
 
@@ -20,16 +23,7 @@ static NSString * const ContentCellIdentifier = @"cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-//    [self.tableView registerClass:[UITableViewHeaderFooterView class]
-//forHeaderFooterViewReuseIdentifier:ContentHeaderIdentifier];
-    
-    [self.tableView registerClass:[UITableViewCell class]
-           forCellReuseIdentifier:ContentCellIdentifier];
+    [self _setupUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -144,21 +138,16 @@ heightForHeaderInSection:(NSInteger)section {
 }
 */
 
-/*
-#pragma mark - Table view delegate
 
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
+#pragma mark - Table view delegate
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ProjectTicketsController *ticketsController = [[ProjectTicketsController alloc] initWithClassName:MTParseTicketClassName];
     
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    [self.navigationController pushViewController:ticketsController
+                                         animated:YES];
 }
-*/
+
 
 /*
 #pragma mark - Navigation
@@ -169,5 +158,23 @@ heightForHeaderInSection:(NSInteger)section {
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark -
+#pragma mark Privates
+#pragma mark Privage - Setup UI
+- (void)_setupUI {
+    self.title = self.project[MTParseProjectNameKey];
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //    [self.tableView registerClass:[UITableViewHeaderFooterView class]
+    //forHeaderFooterViewReuseIdentifier:ContentHeaderIdentifier];
+    
+    [self.tableView registerClass:[UITableViewCell class]
+           forCellReuseIdentifier:ContentCellIdentifier];
+}
 
 @end
