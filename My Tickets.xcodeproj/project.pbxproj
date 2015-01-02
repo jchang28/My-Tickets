@@ -22,6 +22,8 @@
 		09BEF34C13D51C3F001BBCDB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09BEF34B13D51C3F001BBCDB /* Security.framework */; };
 		2FCDD6B014A573F500295AAC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCDD6AF14A573F500295AAC /* QuartzCore.framework */; };
 		4998650515BF305000803E05 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4998650415BF305000803E05 /* StoreKit.framework */; };
+		6A1FC6B41A538B2B00E02DD3 /* ProjectContentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1FC6B21A538B2B00E02DD3 /* ProjectContentsController.m */; };
+		6A1FC6B51A538B2B00E02DD3 /* ProjectContentsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1FC6B31A538B2B00E02DD3 /* ProjectContentsController.xib */; };
 		6AA3DEAC1A4E0823008697B7 /* MTGenericCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA3DEAB1A4E0823008697B7 /* MTGenericCell.m */; };
 		6AA3DEB11A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA3DEB01A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m */; };
 		6AA3DEB61A4E0D71008697B7 /* MTGenericCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA3DEB41A4E0D71008697B7 /* MTGenericCell.xib */; };
@@ -73,6 +75,9 @@
 		6372FF521613CC3C002132AF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		6372FF551613CC42002132AF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		6372FF571613CC47002132AF /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		6A1FC6B11A538B2B00E02DD3 /* ProjectContentsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectContentsController.h; path = ProjectContentsController/ProjectContentsController.h; sourceTree = "<group>"; };
+		6A1FC6B21A538B2B00E02DD3 /* ProjectContentsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectContentsController.m; path = ProjectContentsController/ProjectContentsController.m; sourceTree = "<group>"; };
+		6A1FC6B31A538B2B00E02DD3 /* ProjectContentsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectContentsController.xib; path = ProjectContentsController/ProjectContentsController.xib; sourceTree = "<group>"; };
 		6AA3DEAA1A4E0823008697B7 /* MTGenericCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTGenericCell.h; path = Common/UI/MTGenericCell/MTGenericCell.h; sourceTree = "<group>"; };
 		6AA3DEAB1A4E0823008697B7 /* MTGenericCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTGenericCell.m; path = Common/UI/MTGenericCell/MTGenericCell.m; sourceTree = "<group>"; };
 		6AA3DEAF1A4E08BE008697B7 /* MTAutoPreferredWidthLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTAutoPreferredWidthLabel.h; path = Common/UI/MTAutoPreferredWidthLabel/MTAutoPreferredWidthLabel.h; sourceTree = "<group>"; };
@@ -197,6 +202,16 @@
 				09ABC07E13A1D52D009C3FCF /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6A1FC6B01A538AF500E02DD3 /* ProjectContentsController */ = {
+			isa = PBXGroup;
+			children = (
+				6A1FC6B11A538B2B00E02DD3 /* ProjectContentsController.h */,
+				6A1FC6B21A538B2B00E02DD3 /* ProjectContentsController.m */,
+				6A1FC6B31A538B2B00E02DD3 /* ProjectContentsController.xib */,
+			);
+			name = ProjectContentsController;
 			sourceTree = "<group>";
 		};
 		6AA3DEA71A4E077C008697B7 /* View Controllers */ = {
@@ -325,6 +340,7 @@
 			children = (
 				89F739571A3A790C005F7E30 /* ProjectsViewController.h */,
 				89F739581A3A790C005F7E30 /* ProjectsViewController.m */,
+				6A1FC6B01A538AF500E02DD3 /* ProjectContentsController */,
 				89D345F71A4D41D50006801C /* ProjectDetailController */,
 				890A91AD1A3AD75A00B1ED03 /* ProjectAddViewController */,
 			);
@@ -391,6 +407,7 @@
 				890A91AC1A3AD75300B1ED03 /* ProjectAddViewController.xib in Resources */,
 				C4C51B571613CE0800959FDC /* Default.png in Resources */,
 				C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */,
+				6A1FC6B51A538B2B00E02DD3 /* ProjectContentsController.xib in Resources */,
 				C4C51B591613CE0800959FDC /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +444,7 @@
 				6AA3DEB11A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m in Sources */,
 				6AA3DEAC1A4E0823008697B7 /* MTGenericCell.m in Sources */,
 				89D345FB1A4D42AE0006801C /* ProjectDetailController.m in Sources */,
+				6A1FC6B41A538B2B00E02DD3 /* ProjectContentsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

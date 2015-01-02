@@ -79,7 +79,13 @@
 }
 
 - (void)_saveFieldValueToParse {
+    NSLog(@"Saving field[%@]=%@", self.fieldName, self.fieldValue);
+    
     self.parseProjectModel[self.fieldName] = self.fieldValue;
+    
+    [self.parseProjectModel saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Save [%@].", succeeded ? @"succeeded" : @"failed");
+    }];     
 }
 
 #pragma mark -

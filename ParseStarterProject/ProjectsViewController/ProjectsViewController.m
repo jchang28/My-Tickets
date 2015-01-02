@@ -8,6 +8,7 @@
 
 #import "ProjectsViewController.h"
 #import "ProjectDetailController.h"
+#import "ProjectContentsController.h"
 
 @implementation ProjectsViewController
 
@@ -25,14 +26,21 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PFObject *project = [self objectAtIndexPath:indexPath];
     
     [self _debug:project];
-
     
+    ProjectContentsController *viewController = [[ProjectContentsController alloc] initWithNibName:@"ProjectContentsController"
+                                                                                            bundle:nil];
+    
+    [self.navigationController pushViewController:viewController
+                                         animated:YES];
+
+    /*
     ProjectDetailController *projectDetailController = [[ProjectDetailController alloc] initWithNibName:@"ProjectDetailController"
                                                                                                  bundle:nil
                                                                                       parseProjectModel:project];
     
     [self.navigationController pushViewController:projectDetailController
                                          animated:YES];
+     */
 }
 
 #pragma mark -
@@ -68,7 +76,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)_debug:(PFObject *)project {
     NSLog(@"Project name[%@].", [project objectForKey:MTParseProjectNameKey]);
-    NSLog(@"Project description[%@}.", [project objectForKey:MTParseProjectDescriptionKey]);
+    NSLog(@"Project description[%@].", [project objectForKey:MTParseProjectDescriptionKey]);
 }
 
 
