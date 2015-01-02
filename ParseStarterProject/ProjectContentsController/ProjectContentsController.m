@@ -25,8 +25,8 @@ static NSString * const ContentCellIdentifier = @"cell";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self.tableView registerClass:[UITableViewHeaderFooterView class]
-forHeaderFooterViewReuseIdentifier:ContentHeaderIdentifier];
+//    [self.tableView registerClass:[UITableViewHeaderFooterView class]
+//forHeaderFooterViewReuseIdentifier:ContentHeaderIdentifier];
     
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:ContentCellIdentifier];
@@ -39,6 +39,7 @@ forHeaderFooterViewReuseIdentifier:ContentHeaderIdentifier];
 
 #pragma mark -
 #pragma mark UITableViewDelegate obligations
+/*
 - (UIView *)tableView:(UITableView *)tableView
 viewForHeaderInSection:(NSInteger)section {
     
@@ -70,18 +71,18 @@ viewForHeaderInSection:(NSInteger)section {
 heightForHeaderInSection:(NSInteger)section {
     return 20.0f;
 }
+*/
 
 #pragma mark - Table view data source
-
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return PROJECT_CONTENT_SECTION_COUNT;
 }
+ */
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 1;
+    return PROJECT_CONTENT_SECTION_COUNT;
 }
 
 
@@ -90,8 +91,21 @@ heightForHeaderInSection:(NSInteger)section {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ContentCellIdentifier
                                                             forIndexPath:indexPath];
     
-    //todo...
-    
+    switch (indexPath.row) {
+        case PROJECT_CONTENT_SECTION_TICKETS:
+            cell.textLabel.text = PROJECT_CONTENT_SECTION_TICKETS_HEADER;
+            break;
+            
+        case PROJECT_CONTENT_SECTION_REPORTS:
+            cell.textLabel.text = PROJECT_CONTENT_SECTION_REPORTS_HEADER;
+            
+        case PROJECT_CONTENT_SECTION_MEMBERS:
+            cell.textLabel.text = PROJECT_CONTENT_SECTION_MEMBERS_HEADER;
+            
+        default:
+            break;
+    }
+
     return cell;
 }
 
