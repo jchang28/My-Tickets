@@ -146,7 +146,8 @@ static NSString * const MTGenericCellIdentifier = @"MTGenericCell";
 #pragma mark Private - Cell configuraiton
 - (void)_configureCell:(MTGenericCell *)cell
            atIndexPath:(NSIndexPath *)indexPath {
-    
+    cell.titleLabel.text = self.interestedFields[indexPath.row];
+    cell.subtitleLabel.text = self.parseModel[self.interestedFields[indexPath.row]];
 }
 
 @end
