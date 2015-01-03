@@ -146,6 +146,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case PROJECT_CONTENT_SECTION_TICKETS: {
             ProjectTicketsController *ticketsController = [[ProjectTicketsController alloc] initWithClassName:MTParseTicketClassName];
+            ticketsController.textKey = MTParseTicketNameKey;
             
             [self.navigationController pushViewController:ticketsController
                                                  animated:YES];

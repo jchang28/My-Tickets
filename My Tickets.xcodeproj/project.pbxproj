@@ -44,6 +44,8 @@
 		89D345FB1A4D42AE0006801C /* ProjectDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D345F91A4D42AE0006801C /* ProjectDetailController.m */; };
 		89D345FC1A4D42AE0006801C /* ProjectDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D345FA1A4D42AE0006801C /* ProjectDetailController.xib */; };
 		89D346001A5745580006801C /* ProjectTicketsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D345FF1A5745580006801C /* ProjectTicketsController.m */; };
+		89D346051A5768680006801C /* MTGenericTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D346031A5768680006801C /* MTGenericTableViewController.m */; };
+		89D346061A5768680006801C /* MTGenericTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D346041A5768680006801C /* MTGenericTableViewController.xib */; };
 		89F739591A3A790C005F7E30 /* ProjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89F739581A3A790C005F7E30 /* ProjectsViewController.m */; };
 		91D261791A36EB67005D713D /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 91D261781A36EB67005D713D /* libsqlite3.0.dylib */; };
 		C4C51B571613CE0800959FDC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C51B541613CE0800959FDC /* Default.png */; };
@@ -107,6 +109,9 @@
 		89D345FA1A4D42AE0006801C /* ProjectDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectDetailController.xib; path = ProjectDetailViewController/ProjectDetailController.xib; sourceTree = "<group>"; };
 		89D345FE1A5745580006801C /* ProjectTicketsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectTicketsController.h; path = ProjectTicketsController/ProjectTicketsController.h; sourceTree = "<group>"; };
 		89D345FF1A5745580006801C /* ProjectTicketsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectTicketsController.m; path = ProjectTicketsController/ProjectTicketsController.m; sourceTree = "<group>"; };
+		89D346021A5768680006801C /* MTGenericTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTGenericTableViewController.h; path = Common/UI/MTGenericTableViewController/MTGenericTableViewController.h; sourceTree = "<group>"; };
+		89D346031A5768680006801C /* MTGenericTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTGenericTableViewController.m; path = Common/UI/MTGenericTableViewController/MTGenericTableViewController.m; sourceTree = "<group>"; };
+		89D346041A5768680006801C /* MTGenericTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MTGenericTableViewController.xib; path = Common/UI/MTGenericTableViewController/MTGenericTableViewController.xib; sourceTree = "<group>"; };
 		89F739571A3A790C005F7E30 /* ProjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectsViewController.h; path = ProjectsViewController/ProjectsViewController.h; sourceTree = "<group>"; };
 		89F739581A3A790C005F7E30 /* ProjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectsViewController.m; path = ProjectsViewController/ProjectsViewController.m; sourceTree = "<group>"; };
 		91D261781A36EB67005D713D /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -241,6 +246,7 @@
 				6AA3DEB71A520343008697B7 /* MTGenericDetailedFieldContoller */,
 				6AA3DEAE1A4E0832008697B7 /* MTAutoPreferredWidthLabel */,
 				6AA3DEAD1A4E0828008697B7 /* MTGenericCell */,
+				89D346011A57678A0006801C /* MTGenericTableViewController */,
 			);
 			name = "Common UI";
 			sourceTree = "<group>";
@@ -348,6 +354,16 @@
 			name = ProjectTicketsController;
 			sourceTree = "<group>";
 		};
+		89D346011A57678A0006801C /* MTGenericTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				89D346021A5768680006801C /* MTGenericTableViewController.h */,
+				89D346031A5768680006801C /* MTGenericTableViewController.m */,
+				89D346041A5768680006801C /* MTGenericTableViewController.xib */,
+			);
+			name = MTGenericTableViewController;
+			sourceTree = "<group>";
+		};
 		89F7395A1A3A7913005F7E30 /* ProjectsViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89D346061A5768680006801C /* MTGenericTableViewController.xib in Resources */,
 				09ABC07C13A1D52D009C3FCF /* InfoPlist.strings in Resources */,
 				09ABC08513A1D52E009C3FCF /* MainWindow.xib in Resources */,
 				89D345FC1A4D42AE0006801C /* ProjectDetailController.xib in Resources */,
@@ -450,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				890A91AB1A3AD75300B1ED03 /* ProjectAddViewController.m in Sources */,
+				89D346051A5768680006801C /* MTGenericTableViewController.m in Sources */,
 				09ABC07F13A1D52D009C3FCF /* main.m in Sources */,
 				89F739591A3A790C005F7E30 /* ProjectsViewController.m in Sources */,
 				6AA3DEBB1A5203C1008697B7 /* MTGenericDetailedFieldController.m in Sources */,

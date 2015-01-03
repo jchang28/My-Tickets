@@ -11,5 +11,10 @@
 
 static NSString * const MTParseTicketClassName = @"Ticket";
 
+static NSString * const MTParseTicketNameKey = @"TicketName";
+static NSString * const MTParseTicketDescriptionKey = @"TicketDescription";
+static NSString * const MTParseTicketOwnerKey = @"TicketOwner";
+static NSString * const MTParseTicketCreatorKey = @"TicketCreator";
+
 
 #endif
