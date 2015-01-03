@@ -63,7 +63,7 @@ static NSString * const MTGenericCellIdentifier = @"MTGenericCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MTGenericCellIdentifier
+    MTGenericCell *cell = [tableView dequeueReusableCellWithIdentifier:MTGenericCellIdentifier
                                                             forIndexPath:indexPath];
     
     // Configure the cell...
@@ -135,6 +135,13 @@ static NSString * const MTGenericCellIdentifier = @"MTGenericCell";
 */
 
 #pragma mark -
+#pragma mark UITableView delegate obligations
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self _heightForRowAtIndexPath:indexPath];
+}
+
+#pragma mark -
 #pragma mark Privates
 #pragma mark Private - Setup UI
 - (void)_setupUI {
@@ -149,5 +156,29 @@ static NSString * const MTGenericCellIdentifier = @"MTGenericCell";
     cell.titleLabel.text = self.interestedFields[indexPath.row];
     cell.subtitleLabel.text = self.parseModel[self.interestedFields[indexPath.row]];
 }
+
+#pragma mark Private - Cell height calculations
+/**
+ * The money shots...
+ */
+- (CGFloat)_calculateHeightForConfiguredSizingCell:(MTGenericCell *)sizingCell {
+    //...todo
+    
+}
+
+- (CGFloat)_heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static MTGenericCell *sizingCell = nil;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        sizingCell = [self.tableView dequeueReusableCellWithIdentifier:MTGenericCellIdentifier];
+    });
+    
+    [self _configureCell:sizingCell
+             atIndexPath:indexPath];
+    
+    return [self _calculateHeightForConfiguredSizingCell:sizingCell];
+}
+
 
 @end
