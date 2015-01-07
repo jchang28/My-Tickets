@@ -92,9 +92,11 @@ heightForHeaderInSection:(NSInteger)section {
             
         case PROJECT_CONTENT_SECTION_REPORTS:
             cell.textLabel.text = PROJECT_CONTENT_SECTION_REPORTS_HEADER;
+            break;
             
         case PROJECT_CONTENT_SECTION_MEMBERS:
             cell.textLabel.text = PROJECT_CONTENT_SECTION_MEMBERS_HEADER;
+            break;
             
         default:
             break;
