@@ -33,8 +33,8 @@ static NSString * const MTGenericCellIdentifier = @"MTGenericCell";
     return self;
 }
 
-- (instancetype)initWithParseMode:(PFObject *)parseModel
-                 interestedFields:(NSArray *)interestedFields {
+- (instancetype)initWithParseModel:(PFObject *)parseModel
+                  interestedFields:(NSArray *)interestedFields {
     self = [super init];
     
     if(self ) {
