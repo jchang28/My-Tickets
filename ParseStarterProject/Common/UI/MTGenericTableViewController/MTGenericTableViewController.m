@@ -22,9 +22,22 @@ static NSString * const MTGenericCellIdentifier = @"MTGenericCell";
                          bundle:(NSBundle *)nibBundleOrNil
                      parseModel:(PFObject *)parseModel
                interestedFields:(NSArray *)interestedFields {
-    self = [super init];
+    self = [super initWithNibName:nibNameOrNil
+                           bundle:nibBundleOrNil];
     
     if(self) {
+        _parseModel = parseModel;
+        _interestedFields = interestedFields;
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithParseMode:(PFObject *)parseModel
+                 interestedFields:(NSArray *)interestedFields {
+    self = [super init];
+    
+    if(self ) {
         _parseModel = parseModel;
         _interestedFields = interestedFields;
     }

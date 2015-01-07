@@ -22,4 +22,7 @@
                      parseModel:(PFObject *)parseModel
                interestedFields:(NSArray *)interestedFields;
 
+- (instancetype)initWithParseMode:(PFObject *)parseModel
+                 interestedFields:(NSArray *)interestedFields;
+
 @end
