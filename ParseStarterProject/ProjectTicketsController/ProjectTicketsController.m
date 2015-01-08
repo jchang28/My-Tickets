@@ -7,6 +7,7 @@
 //
 
 #import "ProjectTicketsController.h"
+#import "ProjectTicketDetailController.h"
 
 @interface ProjectTicketsController ()
 
@@ -40,6 +41,15 @@
 
 #pragma mark -
 #pragma mark UITableViewDelegate obligations
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PFObject *ticketModel = [self objectAtIndexPath:indexPath];
+    
+    ProjectTicketDetailController *ticketDetailController = [[ProjectTicketDetailController alloc] initWithTicketModel:ticketModel];
+    
+    [self.navigationController pushViewController:ticketDetailController
+                                         animated:YES];
+}
 
 #pragma mark -
 #pragma mark Parse Overrides
