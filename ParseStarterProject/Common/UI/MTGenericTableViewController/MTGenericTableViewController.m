@@ -35,7 +35,8 @@ static NSString * const MTGenericCellIdentifier = @"MTGenericCell";
 
 - (instancetype)initWithParseModel:(PFObject *)parseModel
                   interestedFields:(NSArray *)interestedFields {
-    self = [super init];
+    self = [super initWithNibName:@"MTGenericTableViewController"
+                           bundle:nil];
     
     if(self ) {
         _parseModel = parseModel;
@@ -167,16 +168,26 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)_configureCell:(MTGenericCell *)cell
            atIndexPath:(NSIndexPath *)indexPath {
     cell.titleLabel.text = self.interestedFields[indexPath.row];
+    
+    //May need to do additional type checking for class specific values, such
+    //as persons, dates, etc...
     cell.subtitleLabel.text = self.parseModel[self.interestedFields[indexPath.row]];
 }
 
 #pragma mark Private - Cell height calculations
 /**
  * The money shots...
+ * These are lifted from ProjectDetailController.m.
  */
 - (CGFloat)_calculateHeightForConfiguredSizingCell:(MTGenericCell *)sizingCell {
-    //...todo
+    sizingCell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.frame), CGRectGetHeight(sizingCell.bounds));
     
+    [sizingCell setNeedsLayout];
+    [sizingCell layoutIfNeeded];
+    
+    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    
+    return size.height + 1.0f;
 }
 
 - (CGFloat)_heightForRowAtIndexPath:(NSIndexPath *)indexPath {
