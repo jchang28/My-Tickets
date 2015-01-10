@@ -28,7 +28,7 @@ static NSString * const MTGenericDetailedFieldControllerNib = @"MTGenericDetaile
                            bundle:nil
                         fieldName:fieldName
                        fieldValue:fieldValue
-                parseProjectModel:parseModel];
+                parseModel:parseModel];
     
     if(self) {
         _controllerTitle = controllerTitle;

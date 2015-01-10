@@ -20,7 +20,7 @@
                          bundle:(NSBundle *)nibBundleOrNil
                      fieldName:(NSString *)fieldName
                      fieldValue:(NSString *)fieldValue
-              parseProjectModel:(PFObject *)parseProjectModel {
+              parseModel:(PFObject *)parseModel {
     
     self = [super initWithNibName:nibNameOrNil
                            bundle:nibBundleOrNil];
@@ -28,7 +28,7 @@
     if(self) {
         _fieldName = [NSString stringWithString:fieldName];
         _fieldValue = [NSString stringWithString:fieldValue];
-        _parseModel = parseProjectModel;
+        _parseModel = parseModel;
     }
     
     return self;

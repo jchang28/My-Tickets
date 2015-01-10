@@ -155,7 +155,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                                                                                                                    bundle:nil
                                                                                                                 fieldName:self.interestedParseFields[indexPath.row]
                                                                                                                fieldValue:self.parseProjectModel[self.interestedParseFields[indexPath.row]]
-                                                                                                        parseProjectModel:self.parseProjectModel];
+                                                                                                        parseModel:self.parseProjectModel];
     [self.navigationController pushViewController:detailedFieldController
                                          animated:YES];
 }

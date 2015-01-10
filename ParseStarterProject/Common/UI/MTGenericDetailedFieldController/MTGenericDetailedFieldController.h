@@ -21,7 +21,7 @@
                          bundle:(NSBundle *)nibBundleOrNil
                       fieldName:(NSString *)fieldName
                      fieldValue:(NSString *)fieldValue
-              parseProjectModel:(PFObject *)parseProjectModel;
+              parseModel:(PFObject *)parseModel;
 
 /**
  * Override this for additional setup.
