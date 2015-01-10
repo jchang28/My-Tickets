@@ -10,10 +10,6 @@
 
 @interface MTGenericDetailedFieldController ()
 
-@property (nonatomic, strong) NSString *fieldName;
-@property (nonatomic, strong) NSString *fieldValue;
-@property (nonatomic, strong) PFObject *parseProjectModel;
-
 @end
 
 @implementation MTGenericDetailedFieldController
@@ -47,14 +43,13 @@
     // Do any additional setup after loading the view from its nib.
     
     [self _setupUI];
-    
+    [self didCreateUI];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 /*
 #pragma mark - Navigation
@@ -66,6 +61,7 @@
 }
 */
 
+
 #pragma mark -
 #pragma mark Privates
 - (void)_setupUI {
@@ -74,8 +70,10 @@
                                                                                 action:@selector(ibSaveField:)];
     self.navigationItem.rightBarButtonItem = saveButton;
     
-    self.title = self.fieldName;
-    self.fieldValueTextView.text = self.fieldValue;
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                  target:self
+                                                                                  action:@selector(ibCancel:)];
+    self.navigationItem.leftBarButtonItem = cancelButton;
 }
 
 - (void)_saveFieldValueToParse {
@@ -94,6 +92,25 @@
     self.fieldValue = self.fieldValueTextView.text;
     
     [self _saveFieldValueToParse];
+    [self didSaveFieldToParse];
+}
+
+- (void)ibCancel:(id)sender {
+    [self didCancel];
+}
+
+#pragma mark -
+#pragma mark Publics
+- (void)didCreateUI {
+    self.title = self.fieldName;
+    self.fieldValueTextView.text = self.fieldValue;
+}
+
+//For others to override if necessary
+- (void)didSaveFieldToParse {
+}
+
+- (void)didCancel {
 }
 
 @end
