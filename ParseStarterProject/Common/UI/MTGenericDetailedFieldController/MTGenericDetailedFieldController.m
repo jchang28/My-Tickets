@@ -28,7 +28,7 @@
     if(self) {
         _fieldName = [NSString stringWithString:fieldName];
         _fieldValue = [NSString stringWithString:fieldValue];
-        _parseProjectModel = parseProjectModel;
+        _parseModel = parseProjectModel;
     }
     
     return self;
@@ -79,9 +79,9 @@
 - (void)_saveFieldValueToParse {
     NSLog(@"Saving field[%@]=%@", self.fieldName, self.fieldValue);
     
-    self.parseProjectModel[self.fieldName] = self.fieldValue;
+    self.parseModel[self.fieldName] = self.fieldValue;
     
-    [self.parseProjectModel saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    [self.parseModel saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         NSLog(@"Save [%@].", succeeded ? @"succeeded" : @"failed");
     }];     
 }

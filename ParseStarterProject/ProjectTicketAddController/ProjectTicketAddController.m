@@ -35,7 +35,7 @@
 #pragma mark -
 #pragma mark Overrides
 - (void)didSaveFieldToParse {
-    [self.delegate didAddTicket:self.parseProjectModel];
+    [self.delegate didAddTicket:self.parseModel];
 }
 
 - (void)didCancel {

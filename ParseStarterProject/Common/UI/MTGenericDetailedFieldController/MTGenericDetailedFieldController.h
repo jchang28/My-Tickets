@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) NSString *fieldName;
 @property (nonatomic, strong) NSString *fieldValue;
-@property (nonatomic, strong) PFObject *parseProjectModel;
+@property (nonatomic, strong) PFObject *parseModel;
 
 @property (nonatomic, strong) IBOutlet UITextView *fieldValueTextView;
 
