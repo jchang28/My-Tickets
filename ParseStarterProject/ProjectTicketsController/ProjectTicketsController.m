@@ -6,8 +6,12 @@
 //
 //
 
+#import "TicketModel.h"
+
 #import "ProjectTicketsController.h"
 #import "ProjectTicketDetailController.h"
+
+#import "ProjectTicketAddController.h"
 
 @interface ProjectTicketsController ()
 
@@ -69,8 +73,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark -
 #pragma mark IBactions
 - (IBAction)ibAddTicket:(id)sender {
-#warning Add in real ticket add controller
-    [self presentViewController:[[UIViewController alloc] init]
+    PFObject *newParseTicketObject = [PFObject objectWithClassName:MTParseTicketClassName];
+    
+    ProjectTicketAddController *addTicketController = [[ProjectTicketAddController alloc] initWithNewParseTicket:newParseTicketObject];
+    addTicketController.delegate = self;
+    
+    UINavigationController *modalContainerController = [[UINavigationController alloc] initWithRootViewController:addTicketController];
+    
+    [self presentViewController:modalContainerController
                        animated:YES
                      completion:nil];
 }
