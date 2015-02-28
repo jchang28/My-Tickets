@@ -38,6 +38,7 @@
 #pragma mark -
 #pragma mark - IBActions
 - (void)ibLogOut:(id)sender {
+    [PFUser logOut];
     [self.delegate didCompleteSettings];
 }
 
