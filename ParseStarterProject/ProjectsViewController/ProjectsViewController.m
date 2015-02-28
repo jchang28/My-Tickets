@@ -9,6 +9,10 @@
 #import "ProjectsViewController.h"
 #import "ProjectDetailController.h"
 #import "ProjectContentsController.h"
+#import "ProjectSettingsController.h"
+
+//Used for setting up log in and log out UI
+#import "ParseStarterProjectAppDelegate.h"
 
 @implementation ProjectsViewController
 
@@ -72,7 +76,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                                                                                target:self
                                                                                action:@selector(ibAddProject:)];
     
+    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                                    target:self
+                                                                                    action:@selector(ibShowSettings:)];
+    
+    
     self.navigationItem.rightBarButtonItem = addButton;
+    self.navigationItem.leftBarButtonItem = settingsButton;
 }
 
 - (void)_debug:(PFObject *)project {
@@ -95,6 +105,16 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                      completion:nil];
 }
 
+- (IBAction)ibShowSettings:(id)sender {
+    ProjectSettingsController *settingsController = [[ProjectSettingsController alloc] initWithNibName:@"ProjectSettingsController"
+                                                                                                bundle:nil];
+    settingsController.delegate = self;
+    
+    [self presentViewController:settingsController
+                       animated:YES
+                     completion:nil];
+}
+
 
 #pragma mark -
 #pragma mark ProjectsViewControllerDelegate Obligations
@@ -107,6 +127,17 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)didCancelAddProject {
     [self dismissViewControllerAnimated:YES
                              completion:nil];
+}
+
+#pragma mark -
+#pragma mark ProjectSettingsControllerDelegate Obligations
+- (void)didCompleteSettings {
+    [self dismissViewControllerAnimated:YES
+                             completion:^{
+                                 ParseStarterProjectAppDelegate *appDelegate = (ParseStarterProjectAppDelegate *)[[UIApplication sharedApplication] delegate];
+                                 
+                                 [appDelegate setupLoggedOutUI];
+                             }];    
 }
 
 @end

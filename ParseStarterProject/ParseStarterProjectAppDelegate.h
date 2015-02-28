@@ -24,4 +24,7 @@
 
 @property (nonatomic, strong) IBOutlet UITabBarController *tabBarController;
 
+- (void)setupLoggedOutUI;
+- (void)setupLoggedInUI;
+
 @end

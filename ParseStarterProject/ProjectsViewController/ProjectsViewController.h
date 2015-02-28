@@ -16,6 +16,10 @@
 - (void)didCancelAddProject;
 @end
 
-@interface ProjectsViewController : PFQueryTableViewController <ProjectsViewControllerDelegate>
+@protocol ProjectSettingsControllerDelegate <NSObject>
+- (void)didCompleteSettings;
+@end;
+
+@interface ProjectsViewController : PFQueryTableViewController <ProjectsViewControllerDelegate, ProjectSettingsControllerDelegate>
 
 @end

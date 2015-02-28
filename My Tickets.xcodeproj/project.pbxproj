@@ -29,6 +29,8 @@
 		6AA3DEB61A4E0D71008697B7 /* MTGenericCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA3DEB41A4E0D71008697B7 /* MTGenericCell.xib */; };
 		6AA3DEBB1A5203C1008697B7 /* MTGenericDetailedFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA3DEB91A5203C1008697B7 /* MTGenericDetailedFieldController.m */; };
 		6AA3DEBC1A5203C1008697B7 /* MTGenericDetailedFieldController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA3DEBA1A5203C1008697B7 /* MTGenericDetailedFieldController.xib */; };
+		6AB801B51AA1580D00B3BEA5 /* ProjectSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB801B31AA1580D00B3BEA5 /* ProjectSettingsController.m */; };
+		6AB801B61AA1580D00B3BEA5 /* ProjectSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB801B41AA1580D00B3BEA5 /* ProjectSettingsController.xib */; };
 		743D7B6D157DA60100084B67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743D7B6C157DA60100084B67 /* CoreGraphics.framework */; };
 		811B095C1A09503D008B3393 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811B095B1A09503D008B3393 /* ParseUI.framework */; };
 		817AD67C196B009E0014C796 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817AD67B196B009E0014C796 /* Bolts.framework */; };
@@ -92,6 +94,9 @@
 		6AA3DEB81A5203C1008697B7 /* MTGenericDetailedFieldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTGenericDetailedFieldController.h; path = Common/UI/MTGenericDetailedFieldController/MTGenericDetailedFieldController.h; sourceTree = "<group>"; };
 		6AA3DEB91A5203C1008697B7 /* MTGenericDetailedFieldController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTGenericDetailedFieldController.m; path = Common/UI/MTGenericDetailedFieldController/MTGenericDetailedFieldController.m; sourceTree = "<group>"; };
 		6AA3DEBA1A5203C1008697B7 /* MTGenericDetailedFieldController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MTGenericDetailedFieldController.xib; path = Common/UI/MTGenericDetailedFieldController/MTGenericDetailedFieldController.xib; sourceTree = "<group>"; };
+		6AB801B21AA1580D00B3BEA5 /* ProjectSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectSettingsController.h; path = ProjectSettingsController/ProjectSettingsController.h; sourceTree = "<group>"; };
+		6AB801B31AA1580D00B3BEA5 /* ProjectSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectSettingsController.m; path = ProjectSettingsController/ProjectSettingsController.m; sourceTree = "<group>"; };
+		6AB801B41AA1580D00B3BEA5 /* ProjectSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectSettingsController.xib; path = ProjectSettingsController/ProjectSettingsController.xib; sourceTree = "<group>"; };
 		743D7B6C157DA60100084B67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		811B095B1A09503D008B3393 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		817AD67B196B009E0014C796 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -290,6 +295,16 @@
 			name = MTGenericDetailedFieldContoller;
 			sourceTree = "<group>";
 		};
+		6AB801B11AA157C700B3BEA5 /* ProjectSettingsController */ = {
+			isa = PBXGroup;
+			children = (
+				6AB801B21AA1580D00B3BEA5 /* ProjectSettingsController.h */,
+				6AB801B31AA1580D00B3BEA5 /* ProjectSettingsController.m */,
+				6AB801B41AA1580D00B3BEA5 /* ProjectSettingsController.xib */,
+			);
+			name = ProjectSettingsController;
+			sourceTree = "<group>";
+		};
 		81A6CA5E1A2EA0B800297C39 /* System Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +423,7 @@
 			children = (
 				89F739571A3A790C005F7E30 /* ProjectsViewController.h */,
 				89F739581A3A790C005F7E30 /* ProjectsViewController.m */,
+				6AB801B11AA157C700B3BEA5 /* ProjectSettingsController */,
 				6A1FC6B01A538AF500E02DD3 /* ProjectContentsController */,
 				89D345F71A4D41D50006801C /* ProjectDetailController */,
 				890A91AD1A3AD75A00B1ED03 /* ProjectAddViewController */,
@@ -477,6 +493,7 @@
 				C4C51B571613CE0800959FDC /* Default.png in Resources */,
 				C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */,
 				6A1FC6B51A538B2B00E02DD3 /* ProjectContentsController.xib in Resources */,
+				6AB801B61AA1580D00B3BEA5 /* ProjectSettingsController.xib in Resources */,
 				C4C51B591613CE0800959FDC /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AB801B51AA1580D00B3BEA5 /* ProjectSettingsController.m in Sources */,
 				890A91AB1A3AD75300B1ED03 /* ProjectAddViewController.m in Sources */,
 				89D346051A5768680006801C /* MTGenericTableViewController.m in Sources */,
 				09ABC07F13A1D52D009C3FCF /* main.m in Sources */,

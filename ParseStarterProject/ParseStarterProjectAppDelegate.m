@@ -210,6 +210,16 @@
 }
 
 #pragma mark -
+#pragma mark Publics - Setup UI
+- (void)setupLoggedOutUI {
+    [self _setupRootWithSignInViewController];
+}
+
+- (void)setupLoggedInUI {
+    [self _setupRootWithTabBarViewController];
+}
+
+#pragma mark -
 #pragma mark Privates - Setup View Controllers
 - (void)_setupRootWithTabBarViewController {
     //Not sure if these will be kept if the query is overriden for this
