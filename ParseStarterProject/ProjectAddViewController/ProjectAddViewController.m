@@ -73,13 +73,21 @@
     //4.    Construct a relationship between project and the creator.
     //      ...
     //      Seems like relations are created implicitly when you request for one...
-    PFRelation *projectMemberRelation = [project relationForKey:MTParseProjectMembershipKey];
-    [projectMemberRelation addObject:[PFUser currentUser]];
+    //PFRelation *projectMemberRelation = [project relationForKey:MTParseProjectMembershipKey];
+    //[projectMemberRelation addObject:[PFUser currentUser]];
 
     
-    //x.    Saves in background - not yet decided to use saveEventually, or
-    //      synchronous...
-    [project saveInBackground];
+    //5.    Saves in background synchronously as Cloud role functions depend on
+    //      it
+    MTLog(@"Saving project...");
+    [project save];
+
+    
+    //6.    Creating associated roles, Admin and Member role for this project
+    //      for the purposes of sharing with other users.
+    MTLog(@"Calling create role, no idea if this call is good or not...");
+    NSDictionary *jasonResponse = [PFCloud callFunction:@"createProjectRoles"
+                                         withParameters: @{@"projectId" : project.objectId}];
     
     return project;
 }

@@ -49,13 +49,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark -
-#pragma makr Parse Overrides
+#pragma mark Parse Overrides
 /**
  * Not sure if this override will override the class name (can the constructed)
  * for this query table set at instantiated (at the app delegate level..).
  *
  * Not sure if the fetched names will be kepted (set at app delegate level...).
- */
+ *
+ * - Removed 2/28 to test out ACL.
+
 - (PFQuery *)queryForTable {
     PFQuery *queryForProjectMembership = [PFQuery queryWithClassName:MTParseProjectClassName];
 
@@ -65,6 +67,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return queryForProjectMembership;
 }
+ */
 
 #pragma mark -
 #pragma mark Privates

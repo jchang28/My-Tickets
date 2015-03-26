@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectInviteController">
+            <connections>
+                <outlet property="inviteButton" destination="Agi-Zc-G3B" id="puh-cD-6Ef"/>
+                <outlet property="inviteeInfo" destination="8g2-Dj-Vr0" id="3QE-vy-I3N"/>
+                <outlet property="inviteeInfoSelector" destination="tdn-3U-yFC" id="2e9-8i-mQD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invite a buddy to help you tackle this project!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqA-0N-e4p">
+                    <rect key="frame" x="20" y="100" width="560" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invite them via E-Mail or User Name:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsg-x9-Ppg">
+                    <rect key="frame" x="20" y="128" width="560" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Nsf-9h-tUX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8g2-Dj-Vr0">
+                    <rect key="frame" x="20" y="193" width="560" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tdn-3U-yFC">
+                    <rect key="frame" x="20" y="157" width="560" height="29"/>
+                    <segments>
+                        <segment title="E-Mail"/>
+                        <segment title="User Name"/>
+                    </segments>
+                    <connections>
+                        <action selector="ibSelectorUpdated:" destination="-1" eventType="valueChanged" id="fcD-R9-nyP"/>
+                    </connections>
+                </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Agi-Zc-G3B">
+                    <rect key="frame" x="20" y="231" width="560" height="30"/>
+                    <state key="normal" title="Invite">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="bqA-0N-e4p" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="3FW-mn-m7R"/>
+                <constraint firstAttribute="trailing" secondItem="Agi-Zc-G3B" secondAttribute="trailing" constant="20" symbolic="YES" id="5Uq-FJ-aOo"/>
+                <constraint firstItem="Agi-Zc-G3B" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="8Ov-pT-cFp"/>
+                <constraint firstAttribute="trailing" secondItem="Tsg-x9-Ppg" secondAttribute="trailing" constant="20" symbolic="YES" id="95X-dL-Vmh"/>
+                <constraint firstItem="Agi-Zc-G3B" firstAttribute="top" secondItem="8g2-Dj-Vr0" secondAttribute="bottom" constant="8" symbolic="YES" id="9eV-Pa-xeP"/>
+                <constraint firstItem="Tsg-x9-Ppg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="HoQ-aH-BdC"/>
+                <constraint firstAttribute="trailing" secondItem="8g2-Dj-Vr0" secondAttribute="trailing" constant="20" symbolic="YES" id="NEs-sa-Rs2"/>
+                <constraint firstItem="bqA-0N-e4p" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="R0M-Kp-crF"/>
+                <constraint firstItem="8g2-Dj-Vr0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="Vny-Oi-1su"/>
+                <constraint firstItem="tdn-3U-yFC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="Ytt-Gd-Obc"/>
+                <constraint firstItem="tdn-3U-yFC" firstAttribute="top" secondItem="Tsg-x9-Ppg" secondAttribute="bottom" constant="8" symbolic="YES" id="bEK-6w-j6E"/>
+                <constraint firstItem="Tsg-x9-Ppg" firstAttribute="top" secondItem="bqA-0N-e4p" secondAttribute="bottom" constant="8" symbolic="YES" id="gGt-de-3Yh"/>
+                <constraint firstItem="8g2-Dj-Vr0" firstAttribute="top" secondItem="tdn-3U-yFC" secondAttribute="bottom" constant="8" symbolic="YES" id="gWM-OV-3QX"/>
+                <constraint firstAttribute="trailing" secondItem="tdn-3U-yFC" secondAttribute="trailing" constant="20" symbolic="YES" id="kZN-u7-KUV"/>
+                <constraint firstAttribute="trailing" secondItem="bqA-0N-e4p" secondAttribute="trailing" constant="20" symbolic="YES" id="xVz-09-RgE"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

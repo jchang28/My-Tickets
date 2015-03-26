@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Utils.h"
 #import <ParseUI/ParseUI.h>
 #import "ProjectsViewController.h"
 

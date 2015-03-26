@@ -8,6 +8,7 @@
 
 #import "ProjectContentsController.h"
 #import "ProjectTicketsController.h"
+#import "ProjectInviteController.h"
 #import "ProjectModel.h"
 #import "TicketModel.h"
 
@@ -98,6 +99,10 @@ heightForHeaderInSection:(NSInteger)section {
             cell.textLabel.text = PROJECT_CONTENT_SECTION_MEMBERS_HEADER;
             break;
             
+        case PROJECT_CONTENT_SECTION_INVITE:
+            cell.textLabel.text = PROJECT_CONTENT_SECTION_INVITE_HEADER;
+            break;
+            
         default:
             break;
     }
@@ -159,6 +164,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
             break;
             
         case PROJECT_CONTENT_SECTION_MEMBERS:
+            break;
+            
+        case PROJECT_CONTENT_SECTION_INVITE: {
+            ProjectInviteController *inviteController = [[ProjectInviteController alloc] initWithNibName:@"ProjectInviteController"
+                                                                                                  bundle:nil];
+            [self.navigationController pushViewController:inviteController
+                                                 animated:YES];
+        }
+            
             break;
             
         default:

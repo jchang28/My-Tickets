@@ -24,6 +24,7 @@
 		4998650515BF305000803E05 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4998650415BF305000803E05 /* StoreKit.framework */; };
 		6A1FC6B41A538B2B00E02DD3 /* ProjectContentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1FC6B21A538B2B00E02DD3 /* ProjectContentsController.m */; };
 		6A1FC6B51A538B2B00E02DD3 /* ProjectContentsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1FC6B31A538B2B00E02DD3 /* ProjectContentsController.xib */; };
+		6A5F6D901AA9256A0056261D /* ProjectAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5F6D8F1AA9256A0056261D /* ProjectAddViewController.xib */; };
 		6AA3DEAC1A4E0823008697B7 /* MTGenericCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA3DEAB1A4E0823008697B7 /* MTGenericCell.m */; };
 		6AA3DEB11A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA3DEB01A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m */; };
 		6AA3DEB61A4E0D71008697B7 /* MTGenericCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA3DEB41A4E0D71008697B7 /* MTGenericCell.xib */; };
@@ -31,6 +32,8 @@
 		6AA3DEBC1A5203C1008697B7 /* MTGenericDetailedFieldController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA3DEBA1A5203C1008697B7 /* MTGenericDetailedFieldController.xib */; };
 		6AB801B51AA1580D00B3BEA5 /* ProjectSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB801B31AA1580D00B3BEA5 /* ProjectSettingsController.m */; };
 		6AB801B61AA1580D00B3BEA5 /* ProjectSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB801B41AA1580D00B3BEA5 /* ProjectSettingsController.xib */; };
+		6AC87D551AC4BC6A008EC6EA /* ProjectInviteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC87D531AC4BC6A008EC6EA /* ProjectInviteController.m */; };
+		6AC87D561AC4BC6A008EC6EA /* ProjectInviteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AC87D541AC4BC6A008EC6EA /* ProjectInviteController.xib */; };
 		743D7B6D157DA60100084B67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743D7B6C157DA60100084B67 /* CoreGraphics.framework */; };
 		811B095C1A09503D008B3393 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811B095B1A09503D008B3393 /* ParseUI.framework */; };
 		817AD67C196B009E0014C796 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817AD67B196B009E0014C796 /* Bolts.framework */; };
@@ -42,7 +45,6 @@
 		890A91A61A3A847000B1ED03 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6372FF551613CC42002132AF /* Social.framework */; };
 		890A91A71A3A847E00B1ED03 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6372FF521613CC3C002132AF /* Accounts.framework */; };
 		890A91AB1A3AD75300B1ED03 /* ProjectAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890A91A91A3AD75300B1ED03 /* ProjectAddViewController.m */; };
-		890A91AC1A3AD75300B1ED03 /* ProjectAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 890A91AA1A3AD75300B1ED03 /* ProjectAddViewController.xib */; };
 		8947AFEF1A6089DB00A75A32 /* ProjectTicketAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8947AFEE1A6089DB00A75A32 /* ProjectTicketAddController.m */; };
 		897F498C1A606A5E008C1F1C /* MTEditDetailedFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 897F498B1A606A5E008C1F1C /* MTEditDetailedFieldController.m */; };
 		89D345FB1A4D42AE0006801C /* ProjectDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D345F91A4D42AE0006801C /* ProjectDetailController.m */; };
@@ -86,6 +88,8 @@
 		6A1FC6B11A538B2B00E02DD3 /* ProjectContentsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectContentsController.h; path = ProjectContentsController/ProjectContentsController.h; sourceTree = "<group>"; };
 		6A1FC6B21A538B2B00E02DD3 /* ProjectContentsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectContentsController.m; path = ProjectContentsController/ProjectContentsController.m; sourceTree = "<group>"; };
 		6A1FC6B31A538B2B00E02DD3 /* ProjectContentsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectContentsController.xib; path = ProjectContentsController/ProjectContentsController.xib; sourceTree = "<group>"; };
+		6A5F6D8C1AA916290056261D /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Common/Utils/Utils.h; sourceTree = "<group>"; };
+		6A5F6D8F1AA9256A0056261D /* ProjectAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectAddViewController.xib; path = ProjectAddViewController/ProjectAddViewController.xib; sourceTree = "<group>"; };
 		6AA3DEAA1A4E0823008697B7 /* MTGenericCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTGenericCell.h; path = Common/UI/MTGenericCell/MTGenericCell.h; sourceTree = "<group>"; };
 		6AA3DEAB1A4E0823008697B7 /* MTGenericCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTGenericCell.m; path = Common/UI/MTGenericCell/MTGenericCell.m; sourceTree = "<group>"; };
 		6AA3DEAF1A4E08BE008697B7 /* MTAutoPreferredWidthLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTAutoPreferredWidthLabel.h; path = Common/UI/MTAutoPreferredWidthLabel/MTAutoPreferredWidthLabel.h; sourceTree = "<group>"; };
@@ -97,6 +101,9 @@
 		6AB801B21AA1580D00B3BEA5 /* ProjectSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectSettingsController.h; path = ProjectSettingsController/ProjectSettingsController.h; sourceTree = "<group>"; };
 		6AB801B31AA1580D00B3BEA5 /* ProjectSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectSettingsController.m; path = ProjectSettingsController/ProjectSettingsController.m; sourceTree = "<group>"; };
 		6AB801B41AA1580D00B3BEA5 /* ProjectSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectSettingsController.xib; path = ProjectSettingsController/ProjectSettingsController.xib; sourceTree = "<group>"; };
+		6AC87D521AC4BC6A008EC6EA /* ProjectInviteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectInviteController.h; path = ProjectInviteController/ProjectInviteController.h; sourceTree = "<group>"; };
+		6AC87D531AC4BC6A008EC6EA /* ProjectInviteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectInviteController.m; path = ProjectInviteController/ProjectInviteController.m; sourceTree = "<group>"; };
+		6AC87D541AC4BC6A008EC6EA /* ProjectInviteController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectInviteController.xib; path = ProjectInviteController/ProjectInviteController.xib; sourceTree = "<group>"; };
 		743D7B6C157DA60100084B67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		811B095B1A09503D008B3393 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		817AD67B196B009E0014C796 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -107,7 +114,6 @@
 		890A91A41A3A845F00B1ED03 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		890A91A81A3AD75300B1ED03 /* ProjectAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectAddViewController.h; path = ProjectAddViewController/ProjectAddViewController.h; sourceTree = "<group>"; };
 		890A91A91A3AD75300B1ED03 /* ProjectAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectAddViewController.m; path = ProjectAddViewController/ProjectAddViewController.m; sourceTree = "<group>"; };
-		890A91AA1A3AD75300B1ED03 /* ProjectAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectAddViewController.xib; path = ProjectAddViewController/ProjectAddViewController.xib; sourceTree = "<group>"; };
 		8947AFED1A6089DB00A75A32 /* ProjectTicketAddController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectTicketAddController.h; path = ProjectTicketAddController/ProjectTicketAddController.h; sourceTree = "<group>"; };
 		8947AFEE1A6089DB00A75A32 /* ProjectTicketAddController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectTicketAddController.m; path = ProjectTicketAddController/ProjectTicketAddController.m; sourceTree = "<group>"; };
 		897F498A1A606A5E008C1F1C /* MTEditDetailedFieldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTEditDetailedFieldController.h; path = Common/UI/MTEditDetailedFieldController/MTEditDetailedFieldController.h; sourceTree = "<group>"; };
@@ -233,8 +239,17 @@
 				6A1FC6B21A538B2B00E02DD3 /* ProjectContentsController.m */,
 				6A1FC6B31A538B2B00E02DD3 /* ProjectContentsController.xib */,
 				89D345FD1A5744F90006801C /* ProjectTicketsController */,
+				6AC87D4D1AC4BB56008EC6EA /* ProjectInviteController */,
 			);
 			name = ProjectContentsController;
+			sourceTree = "<group>";
+		};
+		6A5F6D8B1AA915E10056261D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6A5F6D8C1AA916290056261D /* Utils.h */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		6AA3DEA71A4E077C008697B7 /* View Controllers */ = {
@@ -248,6 +263,7 @@
 		6AA3DEA81A4E0789008697B7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6A5F6D8B1AA915E10056261D /* Utils */,
 				6AA3DEA91A4E0798008697B7 /* Common UI */,
 				89AD32221A3BA31000ECD505 /* Models */,
 			);
@@ -305,6 +321,16 @@
 			name = ProjectSettingsController;
 			sourceTree = "<group>";
 		};
+		6AC87D4D1AC4BB56008EC6EA /* ProjectInviteController */ = {
+			isa = PBXGroup;
+			children = (
+				6AC87D521AC4BC6A008EC6EA /* ProjectInviteController.h */,
+				6AC87D531AC4BC6A008EC6EA /* ProjectInviteController.m */,
+				6AC87D541AC4BC6A008EC6EA /* ProjectInviteController.xib */,
+			);
+			name = ProjectInviteController;
+			sourceTree = "<group>";
+		};
 		81A6CA5E1A2EA0B800297C39 /* System Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,7 +360,7 @@
 			children = (
 				890A91A81A3AD75300B1ED03 /* ProjectAddViewController.h */,
 				890A91A91A3AD75300B1ED03 /* ProjectAddViewController.m */,
-				890A91AA1A3AD75300B1ED03 /* ProjectAddViewController.xib */,
+				6A5F6D8F1AA9256A0056261D /* ProjectAddViewController.xib */,
 			);
 			name = ProjectAddViewController;
 			sourceTree = "<group>";
@@ -489,11 +515,12 @@
 				09144A7313C2997E00388B00 /* Entitlements.plist in Resources */,
 				6AA3DEB61A4E0D71008697B7 /* MTGenericCell.xib in Resources */,
 				6AA3DEBC1A5203C1008697B7 /* MTGenericDetailedFieldController.xib in Resources */,
-				890A91AC1A3AD75300B1ED03 /* ProjectAddViewController.xib in Resources */,
 				C4C51B571613CE0800959FDC /* Default.png in Resources */,
 				C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */,
 				6A1FC6B51A538B2B00E02DD3 /* ProjectContentsController.xib in Resources */,
+				6AC87D561AC4BC6A008EC6EA /* ProjectInviteController.xib in Resources */,
 				6AB801B61AA1580D00B3BEA5 /* ProjectSettingsController.xib in Resources */,
+				6A5F6D901AA9256A0056261D /* ProjectAddViewController.xib in Resources */,
 				C4C51B591613CE0800959FDC /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +563,7 @@
 				89D345FB1A4D42AE0006801C /* ProjectDetailController.m in Sources */,
 				6A1FC6B41A538B2B00E02DD3 /* ProjectContentsController.m in Sources */,
 				89D346001A5745580006801C /* ProjectTicketsController.m in Sources */,
+				6AC87D551AC4BC6A008EC6EA /* ProjectInviteController.m in Sources */,
 				897F498C1A606A5E008C1F1C /* MTEditDetailedFieldController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

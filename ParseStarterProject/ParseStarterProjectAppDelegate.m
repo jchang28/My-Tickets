@@ -37,15 +37,12 @@
     // described here: https://developers.facebook.com/docs/getting-started/facebook-sdk-for-ios/
     // [PFFacebookUtils initializeFacebook];
     // ****************************************************************************
-
+    
     //[PFUser enableAutomaticUser];
+    
+    //0.    Setup ACL.
+    [self _setupParseACL];
 
-    PFACL *defaultACL = [PFACL ACL];
-
-    // If you would like all objects to be private by default, remove this line.
-    //[defaultACL setPublicReadAccess:YES];
-
-    [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
 
     // Override point for customization after application launch.
 
@@ -220,7 +217,39 @@
 }
 
 #pragma mark -
-#pragma mark Privates - Setup View Controllers
+#pragma mark Privates -
+
+#pragma mark Private - Setup ACLs
+/**
+ * ACLs will need to be setup regardless how Roles are setup.
+ */
+- (void)_setupPublicReadACL {
+    MTLog(@"Setting up public read ACL.");
+    PFACL *defaultACL = [PFACL ACL];
+    
+    [defaultACL setPublicReadAccess:YES];
+    
+    [PFACL setDefaultACL:defaultACL
+withAccessForCurrentUser:YES];
+}
+
+- (void)_setupUserPrivateACL {
+    MTLog(@"Setting up user private ACL.");
+    PFACL *defaultACL = [PFACL ACL];
+    
+    [PFACL setDefaultACL:defaultACL
+withAccessForCurrentUser:YES];
+    
+}
+
+/**
+ * Default ACL is user private
+ */
+- (void)_setupParseACL {
+    [self _setupUserPrivateACL];
+}
+
+#pragma mark Private - Setup View Controllers
 - (void)_setupRootWithTabBarViewController {
     //Not sure if these will be kept if the query is overriden for this
     //ParseQueryTable based view controller...
