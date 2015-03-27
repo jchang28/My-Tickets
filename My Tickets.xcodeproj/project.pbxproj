@@ -24,6 +24,8 @@
 		4998650515BF305000803E05 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4998650415BF305000803E05 /* StoreKit.framework */; };
 		6A1FC6B41A538B2B00E02DD3 /* ProjectContentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1FC6B21A538B2B00E02DD3 /* ProjectContentsController.m */; };
 		6A1FC6B51A538B2B00E02DD3 /* ProjectContentsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A1FC6B31A538B2B00E02DD3 /* ProjectContentsController.xib */; };
+		6A235FC01AC4D83700F30135 /* ProjectInviteResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A235FBE1AC4D83700F30135 /* ProjectInviteResultController.m */; };
+		6A235FC11AC4D83700F30135 /* ProjectInviteResultController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A235FBF1AC4D83700F30135 /* ProjectInviteResultController.xib */; };
 		6A5F6D901AA9256A0056261D /* ProjectAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5F6D8F1AA9256A0056261D /* ProjectAddViewController.xib */; };
 		6AA3DEAC1A4E0823008697B7 /* MTGenericCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA3DEAB1A4E0823008697B7 /* MTGenericCell.m */; };
 		6AA3DEB11A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA3DEB01A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m */; };
@@ -88,6 +90,9 @@
 		6A1FC6B11A538B2B00E02DD3 /* ProjectContentsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectContentsController.h; path = ProjectContentsController/ProjectContentsController.h; sourceTree = "<group>"; };
 		6A1FC6B21A538B2B00E02DD3 /* ProjectContentsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectContentsController.m; path = ProjectContentsController/ProjectContentsController.m; sourceTree = "<group>"; };
 		6A1FC6B31A538B2B00E02DD3 /* ProjectContentsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectContentsController.xib; path = ProjectContentsController/ProjectContentsController.xib; sourceTree = "<group>"; };
+		6A235FBD1AC4D83700F30135 /* ProjectInviteResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectInviteResultController.h; path = ProjectInviteResultController/ProjectInviteResultController.h; sourceTree = "<group>"; };
+		6A235FBE1AC4D83700F30135 /* ProjectInviteResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectInviteResultController.m; path = ProjectInviteResultController/ProjectInviteResultController.m; sourceTree = "<group>"; };
+		6A235FBF1AC4D83700F30135 /* ProjectInviteResultController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectInviteResultController.xib; path = ProjectInviteResultController/ProjectInviteResultController.xib; sourceTree = "<group>"; };
 		6A5F6D8C1AA916290056261D /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Common/Utils/Utils.h; sourceTree = "<group>"; };
 		6A5F6D8F1AA9256A0056261D /* ProjectAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectAddViewController.xib; path = ProjectAddViewController/ProjectAddViewController.xib; sourceTree = "<group>"; };
 		6AA3DEAA1A4E0823008697B7 /* MTGenericCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTGenericCell.h; path = Common/UI/MTGenericCell/MTGenericCell.h; sourceTree = "<group>"; };
@@ -244,6 +249,16 @@
 			name = ProjectContentsController;
 			sourceTree = "<group>";
 		};
+		6A235FBC1AC4D60D00F30135 /* ProjectinviteResultController */ = {
+			isa = PBXGroup;
+			children = (
+				6A235FBD1AC4D83700F30135 /* ProjectInviteResultController.h */,
+				6A235FBE1AC4D83700F30135 /* ProjectInviteResultController.m */,
+				6A235FBF1AC4D83700F30135 /* ProjectInviteResultController.xib */,
+			);
+			name = ProjectinviteResultController;
+			sourceTree = "<group>";
+		};
 		6A5F6D8B1AA915E10056261D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +342,7 @@
 				6AC87D521AC4BC6A008EC6EA /* ProjectInviteController.h */,
 				6AC87D531AC4BC6A008EC6EA /* ProjectInviteController.m */,
 				6AC87D541AC4BC6A008EC6EA /* ProjectInviteController.xib */,
+				6A235FBC1AC4D60D00F30135 /* ProjectinviteResultController */,
 			);
 			name = ProjectInviteController;
 			sourceTree = "<group>";
@@ -519,6 +535,7 @@
 				C4C51B581613CE0800959FDC /* Default-568h@2x.png in Resources */,
 				6A1FC6B51A538B2B00E02DD3 /* ProjectContentsController.xib in Resources */,
 				6AC87D561AC4BC6A008EC6EA /* ProjectInviteController.xib in Resources */,
+				6A235FC11AC4D83700F30135 /* ProjectInviteResultController.xib in Resources */,
 				6AB801B61AA1580D00B3BEA5 /* ProjectSettingsController.xib in Resources */,
 				6A5F6D901AA9256A0056261D /* ProjectAddViewController.xib in Resources */,
 				C4C51B591613CE0800959FDC /* Default@2x.png in Resources */,
@@ -559,6 +576,7 @@
 				6AA3DEB11A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m in Sources */,
 				6AA3DEAC1A4E0823008697B7 /* MTGenericCell.m in Sources */,
 				89D346121A5DF6F90006801C /* ProjectTicketDetailController.m in Sources */,
+				6A235FC01AC4D83700F30135 /* ProjectInviteResultController.m in Sources */,
 				8947AFEF1A6089DB00A75A32 /* ProjectTicketAddController.m in Sources */,
 				89D345FB1A4D42AE0006801C /* ProjectDetailController.m in Sources */,
 				6A1FC6B41A538B2B00E02DD3 /* ProjectContentsController.m in Sources */,

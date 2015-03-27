@@ -7,6 +7,8 @@
 //
 
 #import "ProjectInviteController.h"
+#import "ProjectInviteResultController.h"
+#import "Utils.h"
 
 @interface ProjectInviteController ()
 
@@ -42,6 +44,27 @@
     [self _updateUIs];
 }
 
+- (IBAction)ibInvite:(id)sender {
+    MTLog(@"Invited [%@] as [%ld].", self.inviteeInfo.text, self.inviteeInfoSelector.selectedSegmentIndex);
+    
+    //0.    Invite logic with parse code, cloud or local.
+    
+    //1.    Get invitation result.
+    NSString *invitationResultMessage = @"Gibberish....";
+    
+    //2.    Present invitation result via ProjectInviteResultController.
+    ProjectInviteResultController *projectInviteResultController = [[ProjectInviteResultController alloc] initWithNibName:@"ProjectInviteResultController"
+                                                                                                             bundle:nil];
+    projectInviteResultController.delegate = self;
+    projectInviteResultController.inviteResultMessage = invitationResultMessage;
+    
+    UINavigationController *inviteResultNavigationController [[UINavigationController alloc] initWithRootViewController:projectInviteResultController];
+    
+    [self presentViewController:inviteResultNavigationController
+                       animated:YES
+                     completion:nil];
+}
+
 #pragma mark -
 #pragma mark Privates
 #pragma mark Private - UI Update
@@ -60,6 +83,13 @@
             self.inviteeInfo.placeholder = @"User Name";
             break;
     }
+}
+
+#pragma mark -
+#pragma mark ProjectInviteControllerDelegate obligations
+- (void)didDismissInviteResult {
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
 }
 
 

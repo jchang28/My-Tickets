@@ -11,7 +11,11 @@
 #define INVITE_SEGEMENT_VIA_EMAIL               0
 #define INVITE_SEGEMENT_VIA_USERNAME            1
 
-@interface ProjectInviteController : UIViewController
+@protocol ProjectInviteControllerDelegate <NSObject>
+- (void)didDismissInviteResult;
+@end
+
+@interface ProjectInviteController : UIViewController <ProjectInviteControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UISegmentedControl *inviteeInfoSelector;
 @property (nonatomic, strong) IBOutlet UITextField *inviteeInfo;
