@@ -103,6 +103,10 @@ heightForHeaderInSection:(NSInteger)section {
             cell.textLabel.text = PROJECT_CONTENT_SECTION_INVITE_HEADER;
             break;
             
+        case PROJECT_CONTENT_SECTION_INVITATIONS:
+            cell.textLabel.text = PROJECT_CONTENT_SECTION_INVITATIONS_HEADER;
+            break;
+            
         default:
             break;
     }
@@ -153,6 +157,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case PROJECT_CONTENT_SECTION_TICKETS: {
             ProjectTicketsController *ticketsController = [[ProjectTicketsController alloc] initWithClassName:MTParseTicketClassName];
+            //Provide it an instance of the current project we are working with.
+            //Most defintely will need to use it as a filtering as
+            //A user's acl for tickets can span multiple projects.
+            ticketsController.project = self.project;
             ticketsController.textKey = MTParseTicketNameKey;
             
             [self.navigationController pushViewController:ticketsController
@@ -169,6 +177,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         case PROJECT_CONTENT_SECTION_INVITE: {
             ProjectInviteController *inviteController = [[ProjectInviteController alloc] initWithNibName:@"ProjectInviteController"
                                                                                                   bundle:nil];
+            //Provide it an instance of the current project we are working with.
+            inviteController.project = self.project;
+            
             [self.navigationController pushViewController:inviteController
                                                  animated:YES];
         }

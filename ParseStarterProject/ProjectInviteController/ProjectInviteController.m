@@ -5,7 +5,6 @@
 //  Created by Jeff@Level3 on 3/26/15.
 //
 //
-#import <Parse/Parse.h>
 #import "ProjectInviteController.h"
 #import "ProjectInviteResultController.h"
 #import "Utils.h"
@@ -65,8 +64,16 @@
             
         }
         else {
+            PFObject *invitation = [PFObject objectWithClassName:MTParseInvitationClassName
+                                                      dictionary:@{
+                                                                   MTParseInvitationProjectKey : self.project,
+                                                                   MTParseInvitationInviterKey : currentUser,
+                                                                   MTParseInvitationInviteeKey : invitee
+                                                                   }];
+            
+            [invitation saveEventually];
         
-            invitationResultMessage = @"User is found.";
+            invitationResultMessage = [NSString stringWithFormat:@"User[%@] is found.  An invitation request will be sent.  Help is on the way!!!", self.inviteeInfo.text];
         }
     }
     else {
