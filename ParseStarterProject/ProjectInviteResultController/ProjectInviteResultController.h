@@ -12,7 +12,12 @@
 
 @interface ProjectInviteResultController : UIViewController
 
-@property (nonatomic, copy) NSString invitationResultMessage;
+@property (nonatomic, copy) NSString *invitationResultMessage;
 @property (nonatomic, weak) id<ProjectInviteControllerDelegate> delegate;
+
+@property (nonatomic, strong) IBOutlet UILabel *uiInvitationResultLabel;
+@property (nonatomic, strong) IBOutlet UIButton *uiDismissButton;
+
+- (IBAction)ibDismiss:(id)sender;
 
 @end

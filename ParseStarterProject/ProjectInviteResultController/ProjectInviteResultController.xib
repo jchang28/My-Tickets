@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectInviteResultController">
             <connections>
+                <outlet property="uiDismissButton" destination="idL-ON-H5s" id="FYx-th-MtK"/>
+                <outlet property="uiInvitationResultLabel" destination="5Ly-KJ-eqM" id="i5i-GK-KNc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,28 +17,30 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Nc-vu-GU3">
-                    <rect key="frame" x="20" y="550" width="560" height="30"/>
-                    <state key="normal" title="Done">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVv-G2-k8A">
-                    <rect key="frame" x="20" y="20" width="560" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ly-KJ-eqM">
+                    <rect key="frame" x="20" y="65" width="560" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idL-ON-H5s">
+                    <rect key="frame" x="20" y="550" width="560" height="30"/>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="ibDismiss:" destination="-1" eventType="touchUpInside" id="V4x-us-k8I"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="qVv-G2-k8A" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="Fya-Ec-FzH"/>
-                <constraint firstAttribute="bottom" secondItem="1Nc-vu-GU3" secondAttribute="bottom" constant="20" symbolic="YES" id="M94-Gd-uRQ"/>
-                <constraint firstItem="qVv-G2-k8A" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="U4D-ks-Y8S"/>
-                <constraint firstItem="1Nc-vu-GU3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="Zx2-Gl-37d"/>
-                <constraint firstAttribute="trailing" secondItem="qVv-G2-k8A" secondAttribute="trailing" constant="20" symbolic="YES" id="j37-Dt-0jM"/>
-                <constraint firstItem="qVv-G2-k8A" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="1Nc-vu-GU3" secondAttribute="top" constant="8" symbolic="YES" id="sNq-RX-1Ks"/>
-                <constraint firstAttribute="trailing" secondItem="1Nc-vu-GU3" secondAttribute="trailing" constant="20" symbolic="YES" id="yrb-EM-6OS"/>
+                <constraint firstItem="5Ly-KJ-eqM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="J7T-Fu-cVP"/>
+                <constraint firstAttribute="trailing" secondItem="5Ly-KJ-eqM" secondAttribute="trailing" constant="20" symbolic="YES" id="aZt-3T-QoA"/>
+                <constraint firstItem="idL-ON-H5s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="bYb-v6-Idg"/>
+                <constraint firstAttribute="trailing" secondItem="idL-ON-H5s" secondAttribute="trailing" constant="20" symbolic="YES" id="fTJ-zJ-3bi"/>
+                <constraint firstItem="5Ly-KJ-eqM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="hiP-Hm-PTh"/>
+                <constraint firstAttribute="bottom" secondItem="idL-ON-H5s" secondAttribute="bottom" constant="20" symbolic="YES" id="nfh-nf-hJ8"/>
             </constraints>
         </view>
     </objects>

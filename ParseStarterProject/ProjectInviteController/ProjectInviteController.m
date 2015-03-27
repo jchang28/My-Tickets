@@ -5,10 +5,12 @@
 //  Created by Jeff@Level3 on 3/26/15.
 //
 //
-
+#import <Parse/Parse.h>
 #import "ProjectInviteController.h"
 #import "ProjectInviteResultController.h"
 #import "Utils.h"
+#import "ParseModels.h"
+
 
 @interface ProjectInviteController ()
 
@@ -45,20 +47,39 @@
 }
 
 - (IBAction)ibInvite:(id)sender {
+    NSString *invitationResultMessage;
+    
     MTLog(@"Invited [%@] as [%ld].", self.inviteeInfo.text, self.inviteeInfoSelector.selectedSegmentIndex);
     
     //0.    Invite logic with parse code, cloud or local.
+    PFUser *invitee = [self _locateInvitee:self.inviteeInfo.text
+                             usingUserName:self.inviteeInfoSelector.selectedSegmentIndex == INVITE_SEGEMENT_VIA_EMAIL ? NO : YES];
     
-    //1.    Get invitation result.
-    NSString *invitationResultMessage = @"Gibberish....";
-    
+    //1.    Do user invitation logic...
+    if(invitee) {
+        PFUser *currentUser = [PFUser currentUser];
+        
+        if([invitee.objectId isEqualToString:currentUser.objectId]) {
+            
+            invitationResultMessage = @"You can't invite yourself, silly.";
+            
+        }
+        else {
+        
+            invitationResultMessage = @"User is found.";
+        }
+    }
+    else {
+        invitationResultMessage = @"User is not using My Tickets yet, ask him to register!";
+    }
+
     //2.    Present invitation result via ProjectInviteResultController.
     ProjectInviteResultController *projectInviteResultController = [[ProjectInviteResultController alloc] initWithNibName:@"ProjectInviteResultController"
                                                                                                              bundle:nil];
     projectInviteResultController.delegate = self;
-    projectInviteResultController.inviteResultMessage = invitationResultMessage;
+    projectInviteResultController.invitationResultMessage = invitationResultMessage;
     
-    UINavigationController *inviteResultNavigationController [[UINavigationController alloc] initWithRootViewController:projectInviteResultController];
+    UINavigationController *inviteResultNavigationController = [[UINavigationController alloc] initWithRootViewController:projectInviteResultController];
     
     [self presentViewController:inviteResultNavigationController
                        animated:YES
@@ -83,6 +104,22 @@
             self.inviteeInfo.placeholder = @"User Name";
             break;
     }
+}
+
+#pragma mark Private - Invite user logic
+- (PFUser *)_locateInvitee:(NSString *)userInfo
+             usingUserName:(BOOL)isUserName {
+    NSString *queryKey = isUserName ? MTParseUserUserNameKey : MTParseUserEmailKey;
+    
+    
+    PFQuery *inviteQuery = [PFQuery queryWithClassName:@"_User"];
+    [inviteQuery whereKey:queryKey
+                  equalTo:userInfo];
+    
+    //1.    Synchronously, without error checking.
+    PFUser *invitee = (PFUser *)[inviteQuery getFirstObject];
+    
+    return invitee;
 }
 
 #pragma mark -

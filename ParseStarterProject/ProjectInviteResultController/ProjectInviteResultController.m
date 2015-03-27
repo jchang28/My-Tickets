@@ -7,6 +7,7 @@
 //
 
 #import "ProjectInviteResultController.h"
+#import "ProjectInviteController.h"
 
 @interface ProjectInviteResultController ()
 
@@ -17,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.uiInvitationResultLabel.text = @"abc123";
+    
+    [self _updateUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +37,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark -
+#pragma mark Privates
+- (void)_updateInvigationResultLabel {
+    self.uiInvitationResultLabel.text = self.invitationResultMessage;
+}
+
+- (void)_updateUI {
+    [self _updateInvigationResultLabel];
+}
+
+#pragma mark -
+#pragma mark IBActions
+- (IBAction)ibDismiss:(id)sender {
+    [self.delegate didDismissInviteResult];
+}
 
 @end

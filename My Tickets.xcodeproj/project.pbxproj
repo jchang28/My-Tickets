@@ -87,6 +87,8 @@
 		6372FF521613CC3C002132AF /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		6372FF551613CC42002132AF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		6372FF571613CC47002132AF /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		6A1532891AC5D8990018DAEF /* InvitationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = InvitationModel.h; path = Models/InvitationModel.h; sourceTree = "<group>"; };
+		6A15328A1AC5F17E0018DAEF /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
 		6A1FC6B11A538B2B00E02DD3 /* ProjectContentsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectContentsController.h; path = ProjectContentsController/ProjectContentsController.h; sourceTree = "<group>"; };
 		6A1FC6B21A538B2B00E02DD3 /* ProjectContentsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectContentsController.m; path = ProjectContentsController/ProjectContentsController.m; sourceTree = "<group>"; };
 		6A1FC6B31A538B2B00E02DD3 /* ProjectContentsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectContentsController.xib; path = ProjectContentsController/ProjectContentsController.xib; sourceTree = "<group>"; };
@@ -406,6 +408,8 @@
 				89AD32211A3BA2F900ECD505 /* ProjectModel.h */,
 				89AD32241A3BA80700ECD505 /* TicketModel.h */,
 				89AD32251A3BA81B00ECD505 /* DiscussionModel.h */,
+				6A1532891AC5D8990018DAEF /* InvitationModel.h */,
+				6A15328A1AC5F17E0018DAEF /* User.h */,
 			);
 			name = Models;
 			sourceTree = "<group>";
