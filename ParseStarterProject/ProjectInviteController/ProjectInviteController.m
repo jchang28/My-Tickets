@@ -74,6 +74,13 @@
                                                                    MTParseInvitationMessageKey : invitationMessage
                                                                    }];
             
+            //Make is so that the invitee can see the invitation.
+            [invitation.ACL setReadAccess:YES
+                                  forUser:invitee];
+            [invitation.ACL setWriteAccess:YES
+                                   forUser:invitee];
+            
+            
             [invitation saveEventually];
         
             invitationResultMessage = [NSString stringWithFormat:@"User[%@] is found.  An invitation request will be sent.  Help is on the way!!!", self.inviteeInfo.text];

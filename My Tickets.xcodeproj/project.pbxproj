@@ -37,6 +37,8 @@
 		6AC87D551AC4BC6A008EC6EA /* ProjectInviteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC87D531AC4BC6A008EC6EA /* ProjectInviteController.m */; };
 		6AC87D561AC4BC6A008EC6EA /* ProjectInviteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AC87D541AC4BC6A008EC6EA /* ProjectInviteController.xib */; };
 		6AEE53EC1ACB3CC80086A1E7 /* ProjectInvitationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE53EB1ACB3CC80086A1E7 /* ProjectInvitationsController.m */; };
+		6AEE53F11ACB4F5C0086A1E7 /* ProjectInvitationActionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE53EF1ACB4F5C0086A1E7 /* ProjectInvitationActionController.m */; };
+		6AEE53F21ACB4F5C0086A1E7 /* ProjectInvitationActionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AEE53F01ACB4F5C0086A1E7 /* ProjectInvitationActionController.xib */; };
 		743D7B6D157DA60100084B67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743D7B6C157DA60100084B67 /* CoreGraphics.framework */; };
 		811B095C1A09503D008B3393 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811B095B1A09503D008B3393 /* ParseUI.framework */; };
 		817AD67C196B009E0014C796 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817AD67B196B009E0014C796 /* Bolts.framework */; };
@@ -114,6 +116,9 @@
 		6AC87D541AC4BC6A008EC6EA /* ProjectInviteController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectInviteController.xib; path = ProjectInviteController/ProjectInviteController.xib; sourceTree = "<group>"; };
 		6AEE53EA1ACB3CC80086A1E7 /* ProjectInvitationsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectInvitationsController.h; path = ProjectInvitationsController/ProjectInvitationsController.h; sourceTree = "<group>"; };
 		6AEE53EB1ACB3CC80086A1E7 /* ProjectInvitationsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectInvitationsController.m; path = ProjectInvitationsController/ProjectInvitationsController.m; sourceTree = "<group>"; };
+		6AEE53EE1ACB4F5C0086A1E7 /* ProjectInvitationActionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectInvitationActionController.h; path = ProjectInvitationActionController/ProjectInvitationActionController.h; sourceTree = "<group>"; };
+		6AEE53EF1ACB4F5C0086A1E7 /* ProjectInvitationActionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectInvitationActionController.m; path = ProjectInvitationActionController/ProjectInvitationActionController.m; sourceTree = "<group>"; };
+		6AEE53F01ACB4F5C0086A1E7 /* ProjectInvitationActionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectInvitationActionController.xib; path = ProjectInvitationActionController/ProjectInvitationActionController.xib; sourceTree = "<group>"; };
 		743D7B6C157DA60100084B67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		811B095B1A09503D008B3393 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		817AD67B196B009E0014C796 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -358,8 +363,19 @@
 			children = (
 				6AEE53EA1ACB3CC80086A1E7 /* ProjectInvitationsController.h */,
 				6AEE53EB1ACB3CC80086A1E7 /* ProjectInvitationsController.m */,
+				6AEE53ED1ACB4EFA0086A1E7 /* ProjectInvitationActionController */,
 			);
 			name = ProjectInvitationsController;
+			sourceTree = "<group>";
+		};
+		6AEE53ED1ACB4EFA0086A1E7 /* ProjectInvitationActionController */ = {
+			isa = PBXGroup;
+			children = (
+				6AEE53EE1ACB4F5C0086A1E7 /* ProjectInvitationActionController.h */,
+				6AEE53EF1ACB4F5C0086A1E7 /* ProjectInvitationActionController.m */,
+				6AEE53F01ACB4F5C0086A1E7 /* ProjectInvitationActionController.xib */,
+			);
+			name = ProjectInvitationActionController;
 			sourceTree = "<group>";
 		};
 		81A6CA5E1A2EA0B800297C39 /* System Frameworks */ = {
@@ -545,6 +561,7 @@
 				09ABC07C13A1D52D009C3FCF /* InfoPlist.strings in Resources */,
 				09ABC08513A1D52E009C3FCF /* MainWindow.xib in Resources */,
 				89D345FC1A4D42AE0006801C /* ProjectDetailController.xib in Resources */,
+				6AEE53F21ACB4F5C0086A1E7 /* ProjectInvitationActionController.xib in Resources */,
 				09144A7313C2997E00388B00 /* Entitlements.plist in Resources */,
 				6AA3DEB61A4E0D71008697B7 /* MTGenericCell.xib in Resources */,
 				6AA3DEBC1A5203C1008697B7 /* MTGenericDetailedFieldController.xib in Resources */,
@@ -585,6 +602,7 @@
 			files = (
 				6AB801B51AA1580D00B3BEA5 /* ProjectSettingsController.m in Sources */,
 				890A91AB1A3AD75300B1ED03 /* ProjectAddViewController.m in Sources */,
+				6AEE53F11ACB4F5C0086A1E7 /* ProjectInvitationActionController.m in Sources */,
 				89D346051A5768680006801C /* MTGenericTableViewController.m in Sources */,
 				09ABC07F13A1D52D009C3FCF /* main.m in Sources */,
 				89F739591A3A790C005F7E30 /* ProjectsViewController.m in Sources */,

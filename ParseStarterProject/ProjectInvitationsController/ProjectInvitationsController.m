@@ -7,7 +7,41 @@
 //
 
 #import "ProjectInvitationsController.h"
+#import "ProjectInvitationActionController.h"
 
 @implementation ProjectInvitationsController
+
+#pragma mark -
+#pragma mark Overrides - UITAbleViewDelegate obligations
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PFObject *invitation = [self objectAtIndexPath:indexPath];
+    
+    ProjectInvitationActionController *invitationActionController = [[ProjectInvitationActionController alloc] initWithNibName:@"ProjectInvitationActionController"
+                                                                                                                        bundle:nil];
+    invitationActionController.delegate = self;
+    [self presentViewController:invitationActionController
+                       animated:YES
+                     completion:nil];
+}
+
+
+#pragma mark -
+#pragma mark ProjectInvitationsControllerDelegate obligations
+- (void)didAcceptInvitation {
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+    
+    //Additional logic for adding the user to part of the project,
+    //either as admin or contributor...
+}
+
+- (void)didDeclineInvitation {
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+    
+    //Additional logic for decline...
+    
+}
 
 @end

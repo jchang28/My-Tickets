@@ -8,6 +8,13 @@
 
 #import <ParseUI/ParseUI.h>
 
-@interface ProjectInvitationsController : PFQueryTableViewController
+@protocol ProjectInvitationsControllerDelegate <NSObject>
+
+- (void)didAcceptInvitation;
+- (void)didDeclineInvitation;
+
+@end
+
+@interface ProjectInvitationsController : PFQueryTableViewController <ProjectInvitationsControllerDelegate>
 
 @end
