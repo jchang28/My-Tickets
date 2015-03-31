@@ -36,6 +36,7 @@
 		6AB801B61AA1580D00B3BEA5 /* ProjectSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB801B41AA1580D00B3BEA5 /* ProjectSettingsController.xib */; };
 		6AC87D551AC4BC6A008EC6EA /* ProjectInviteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC87D531AC4BC6A008EC6EA /* ProjectInviteController.m */; };
 		6AC87D561AC4BC6A008EC6EA /* ProjectInviteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AC87D541AC4BC6A008EC6EA /* ProjectInviteController.xib */; };
+		6AEE53EC1ACB3CC80086A1E7 /* ProjectInvitationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE53EB1ACB3CC80086A1E7 /* ProjectInvitationsController.m */; };
 		743D7B6D157DA60100084B67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743D7B6C157DA60100084B67 /* CoreGraphics.framework */; };
 		811B095C1A09503D008B3393 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811B095B1A09503D008B3393 /* ParseUI.framework */; };
 		817AD67C196B009E0014C796 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817AD67B196B009E0014C796 /* Bolts.framework */; };
@@ -111,6 +112,8 @@
 		6AC87D521AC4BC6A008EC6EA /* ProjectInviteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectInviteController.h; path = ProjectInviteController/ProjectInviteController.h; sourceTree = "<group>"; };
 		6AC87D531AC4BC6A008EC6EA /* ProjectInviteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectInviteController.m; path = ProjectInviteController/ProjectInviteController.m; sourceTree = "<group>"; };
 		6AC87D541AC4BC6A008EC6EA /* ProjectInviteController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectInviteController.xib; path = ProjectInviteController/ProjectInviteController.xib; sourceTree = "<group>"; };
+		6AEE53EA1ACB3CC80086A1E7 /* ProjectInvitationsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectInvitationsController.h; path = ProjectInvitationsController/ProjectInvitationsController.h; sourceTree = "<group>"; };
+		6AEE53EB1ACB3CC80086A1E7 /* ProjectInvitationsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectInvitationsController.m; path = ProjectInvitationsController/ProjectInvitationsController.m; sourceTree = "<group>"; };
 		743D7B6C157DA60100084B67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		811B095B1A09503D008B3393 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		817AD67B196B009E0014C796 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -247,6 +250,7 @@
 				6A1FC6B31A538B2B00E02DD3 /* ProjectContentsController.xib */,
 				89D345FD1A5744F90006801C /* ProjectTicketsController */,
 				6AC87D4D1AC4BB56008EC6EA /* ProjectInviteController */,
+				6AEE53E91ACB3C0A0086A1E7 /* ProjectInvitationsController */,
 			);
 			name = ProjectContentsController;
 			sourceTree = "<group>";
@@ -347,6 +351,15 @@
 				6A235FBC1AC4D60D00F30135 /* ProjectinviteResultController */,
 			);
 			name = ProjectInviteController;
+			sourceTree = "<group>";
+		};
+		6AEE53E91ACB3C0A0086A1E7 /* ProjectInvitationsController */ = {
+			isa = PBXGroup;
+			children = (
+				6AEE53EA1ACB3CC80086A1E7 /* ProjectInvitationsController.h */,
+				6AEE53EB1ACB3CC80086A1E7 /* ProjectInvitationsController.m */,
+			);
+			name = ProjectInvitationsController;
 			sourceTree = "<group>";
 		};
 		81A6CA5E1A2EA0B800297C39 /* System Frameworks */ = {
@@ -578,6 +591,7 @@
 				6AA3DEBB1A5203C1008697B7 /* MTGenericDetailedFieldController.m in Sources */,
 				09ABC08213A1D52D009C3FCF /* ParseStarterProjectAppDelegate.m in Sources */,
 				6AA3DEB11A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m in Sources */,
+				6AEE53EC1ACB3CC80086A1E7 /* ProjectInvitationsController.m in Sources */,
 				6AA3DEAC1A4E0823008697B7 /* MTGenericCell.m in Sources */,
 				89D346121A5DF6F90006801C /* ProjectTicketDetailController.m in Sources */,
 				6A235FC01AC4D83700F30135 /* ProjectInviteResultController.m in Sources */,

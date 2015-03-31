@@ -14,6 +14,7 @@ static NSString * const MTParseInvitationClassName = @"Invitation";
 static NSString * const MTParseInvitationProjectKey = @"Project";
 static NSString * const MTParseInvitationInviterKey = @"Inviter";
 static NSString * const MTParseInvitationInviteeKey = @"Invitee";
+static NSString * const MTParseInvitationMessageKey = @"Message";
 static NSString * const MTParseInvitationStatusKey = @"Status";
 
 #endif

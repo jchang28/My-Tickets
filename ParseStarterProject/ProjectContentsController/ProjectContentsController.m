@@ -9,8 +9,8 @@
 #import "ProjectContentsController.h"
 #import "ProjectTicketsController.h"
 #import "ProjectInviteController.h"
-#import "ProjectModel.h"
-#import "TicketModel.h"
+#import "ProjectInvitationsController.h"
+#import "ParseModels.h"
 
 @interface ProjectContentsController ()
 
@@ -181,6 +181,15 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
             inviteController.project = self.project;
             
             [self.navigationController pushViewController:inviteController
+                                                 animated:YES];
+        }
+            break;
+            
+        case PROJECT_CONTENT_SECTION_INVITATIONS: {
+            ProjectInvitationsController *invitationsController = [[ProjectInvitationsController alloc] initWithClassName:MTParseInvitationClassName];
+            invitationsController.textKey = MTParseInvitationMessageKey;
+            
+            [self.navigationController pushViewController:invitationsController
                                                  animated:YES];
         }
             

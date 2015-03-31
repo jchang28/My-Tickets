@@ -64,11 +64,14 @@
             
         }
         else {
+            NSString *invitationMessage = [self _invitationMessage];
+            
             PFObject *invitation = [PFObject objectWithClassName:MTParseInvitationClassName
                                                       dictionary:@{
                                                                    MTParseInvitationProjectKey : self.project,
                                                                    MTParseInvitationInviterKey : currentUser,
-                                                                   MTParseInvitationInviteeKey : invitee
+                                                                   MTParseInvitationInviteeKey : invitee,
+                                                                   MTParseInvitationMessageKey : invitationMessage
                                                                    }];
             
             [invitation saveEventually];
@@ -127,6 +130,16 @@
     PFUser *invitee = (PFUser *)[inviteQuery getFirstObject];
     
     return invitee;
+}
+
+#pragma mark Private - Create invitation message
+- (NSString *)_invitationMessage {
+    NSString *invitationMessage;
+    NSString *invitationTemplate = @"%@ - %@ has invited you to help with this project!";
+    
+    invitationMessage = [NSString stringWithFormat:invitationTemplate, self.project[MTParseProjectNameKey], [PFUser currentUser].username];
+    
+    return invitationMessage;
 }
 
 #pragma mark -
