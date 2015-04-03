@@ -39,6 +39,7 @@
 		6AEE53EC1ACB3CC80086A1E7 /* ProjectInvitationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE53EB1ACB3CC80086A1E7 /* ProjectInvitationsController.m */; };
 		6AEE53F11ACB4F5C0086A1E7 /* ProjectInvitationActionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE53EF1ACB4F5C0086A1E7 /* ProjectInvitationActionController.m */; };
 		6AEE53F21ACB4F5C0086A1E7 /* ProjectInvitationActionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AEE53F01ACB4F5C0086A1E7 /* ProjectInvitationActionController.xib */; };
+		6AF038861ACE349D00861C41 /* ParseModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AF038851ACE349D00861C41 /* ParseModelFactory.m */; };
 		743D7B6D157DA60100084B67 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743D7B6C157DA60100084B67 /* CoreGraphics.framework */; };
 		811B095C1A09503D008B3393 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 811B095B1A09503D008B3393 /* ParseUI.framework */; };
 		817AD67C196B009E0014C796 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817AD67B196B009E0014C796 /* Bolts.framework */; };
@@ -119,6 +120,8 @@
 		6AEE53EE1ACB4F5C0086A1E7 /* ProjectInvitationActionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectInvitationActionController.h; path = ProjectInvitationActionController/ProjectInvitationActionController.h; sourceTree = "<group>"; };
 		6AEE53EF1ACB4F5C0086A1E7 /* ProjectInvitationActionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectInvitationActionController.m; path = ProjectInvitationActionController/ProjectInvitationActionController.m; sourceTree = "<group>"; };
 		6AEE53F01ACB4F5C0086A1E7 /* ProjectInvitationActionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectInvitationActionController.xib; path = ProjectInvitationActionController/ProjectInvitationActionController.xib; sourceTree = "<group>"; };
+		6AEE53F51ACE1A110086A1E7 /* ParseModelFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ParseModelFactory.h; path = Models/ParseModelFactory.h; sourceTree = "<group>"; };
+		6AF038851ACE349D00861C41 /* ParseModelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParseModelFactory.m; path = Models/ParseModelFactory.m; sourceTree = "<group>"; };
 		743D7B6C157DA60100084B67 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		811B095B1A09503D008B3393 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		817AD67B196B009E0014C796 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -439,6 +442,8 @@
 				89AD32251A3BA81B00ECD505 /* DiscussionModel.h */,
 				6A1532891AC5D8990018DAEF /* InvitationModel.h */,
 				6A15328A1AC5F17E0018DAEF /* User.h */,
+				6AEE53F51ACE1A110086A1E7 /* ParseModelFactory.h */,
+				6AF038851ACE349D00861C41 /* ParseModelFactory.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -602,6 +607,7 @@
 			files = (
 				6AB801B51AA1580D00B3BEA5 /* ProjectSettingsController.m in Sources */,
 				890A91AB1A3AD75300B1ED03 /* ProjectAddViewController.m in Sources */,
+				6AF038861ACE349D00861C41 /* ParseModelFactory.m in Sources */,
 				6AEE53F11ACB4F5C0086A1E7 /* ProjectInvitationActionController.m in Sources */,
 				89D346051A5768680006801C /* MTGenericTableViewController.m in Sources */,
 				09ABC07F13A1D52D009C3FCF /* main.m in Sources */,
