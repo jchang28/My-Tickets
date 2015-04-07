@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "Utils.h"
 #import <ParseUI/ParseUI.h>
-#import "ProjectsViewController.h"
 
 @class ParseStarterProjectViewController;
 
@@ -20,6 +19,8 @@
 @property (nonatomic, strong) UINavigationController *projectsNaviController;
 
 //Tab 1
+@property (nonatomic, strong) UINavigationController *invitationNaviController;
+
 //Tab 2
 //Tab 3...
 

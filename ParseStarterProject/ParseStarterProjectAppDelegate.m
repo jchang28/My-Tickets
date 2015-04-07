@@ -20,6 +20,10 @@
 #import "ParseStarterProjectAppDelegate.h"
 #import "ParseStarterProjectViewController.h"
 
+#import "ProjectsViewController.h"
+#import "ProjectInvitationsController.h"
+
+
 @implementation ParseStarterProjectAppDelegate
 
 #pragma mark - UIApplicationDelegate
@@ -251,12 +255,20 @@ withAccessForCurrentUser:YES];
 
 #pragma mark Private - Setup View Controllers
 - (void)_setupRootWithTabBarViewController {
+    
+    //Tab 0:
     //Not sure if these will be kept if the query is overriden for this
     //ParseQueryTable based view controller...
     ProjectsViewController *projectsViewController = [[ProjectsViewController alloc] initWithClassName:MTParseProjectClassName];
     projectsViewController.textKey = MTParseProjectNameKey;
     self.projectsNaviController = [[UINavigationController alloc] initWithRootViewController:projectsViewController];
-    self.tabBarController.viewControllers = @[self.projectsNaviController];
+    
+    //Tab 1:
+    ProjectInvitationsController *invitationsController = [[ProjectInvitationsController alloc] initWithClassName:MTParseInvitationClassName];
+    invitationsController.textKey = MTParseInvitationMessageKey;
+    self.invitationNaviController = [[UINavigationController alloc] initWithRootViewController:invitationsController];
+    
+    self.tabBarController.viewControllers = @[self.projectsNaviController, self.invitationNaviController];
     
     self.window.rootViewController = self.tabBarController;
 }
