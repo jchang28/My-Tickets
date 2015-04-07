@@ -99,6 +99,7 @@
 		6A235FBD1AC4D83700F30135 /* ProjectInviteResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectInviteResultController.h; path = ProjectInviteResultController/ProjectInviteResultController.h; sourceTree = "<group>"; };
 		6A235FBE1AC4D83700F30135 /* ProjectInviteResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectInviteResultController.m; path = ProjectInviteResultController/ProjectInviteResultController.m; sourceTree = "<group>"; };
 		6A235FBF1AC4D83700F30135 /* ProjectInviteResultController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectInviteResultController.xib; path = ProjectInviteResultController/ProjectInviteResultController.xib; sourceTree = "<group>"; };
+		6A24909F1AD44DD90052C1D4 /* ProjectRoleModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProjectRoleModels.h; path = Models/ProjectRoleModels.h; sourceTree = "<group>"; };
 		6A5F6D8C1AA916290056261D /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Common/Utils/Utils.h; sourceTree = "<group>"; };
 		6A5F6D8F1AA9256A0056261D /* ProjectAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectAddViewController.xib; path = ProjectAddViewController/ProjectAddViewController.xib; sourceTree = "<group>"; };
 		6AA3DEAA1A4E0823008697B7 /* MTGenericCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTGenericCell.h; path = Common/UI/MTGenericCell/MTGenericCell.h; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 		6AA3DEB81A5203C1008697B7 /* MTGenericDetailedFieldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTGenericDetailedFieldController.h; path = Common/UI/MTGenericDetailedFieldController/MTGenericDetailedFieldController.h; sourceTree = "<group>"; };
 		6AA3DEB91A5203C1008697B7 /* MTGenericDetailedFieldController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTGenericDetailedFieldController.m; path = Common/UI/MTGenericDetailedFieldController/MTGenericDetailedFieldController.m; sourceTree = "<group>"; };
 		6AA3DEBA1A5203C1008697B7 /* MTGenericDetailedFieldController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MTGenericDetailedFieldController.xib; path = Common/UI/MTGenericDetailedFieldController/MTGenericDetailedFieldController.xib; sourceTree = "<group>"; };
+		6AAFB50D1ACF2CE90090684F /* ProjectMetaModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProjectMetaModel.h; path = Models/ProjectMetaModel.h; sourceTree = "<group>"; };
 		6AB801B21AA1580D00B3BEA5 /* ProjectSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectSettingsController.h; path = ProjectSettingsController/ProjectSettingsController.h; sourceTree = "<group>"; };
 		6AB801B31AA1580D00B3BEA5 /* ProjectSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectSettingsController.m; path = ProjectSettingsController/ProjectSettingsController.m; sourceTree = "<group>"; };
 		6AB801B41AA1580D00B3BEA5 /* ProjectSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectSettingsController.xib; path = ProjectSettingsController/ProjectSettingsController.xib; sourceTree = "<group>"; };
@@ -340,6 +342,15 @@
 			name = MTGenericDetailedFieldContoller;
 			sourceTree = "<group>";
 		};
+		6AAFB50C1ACF24CC0090684F /* ParseModelFactory */ = {
+			isa = PBXGroup;
+			children = (
+				6AEE53F51ACE1A110086A1E7 /* ParseModelFactory.h */,
+				6AF038851ACE349D00861C41 /* ParseModelFactory.m */,
+			);
+			name = ParseModelFactory;
+			sourceTree = "<group>";
+		};
 		6AB801B11AA157C700B3BEA5 /* ProjectSettingsController */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,12 +449,13 @@
 			children = (
 				89AD32231A3BA6F700ECD505 /* ParseModels.h */,
 				89AD32211A3BA2F900ECD505 /* ProjectModel.h */,
+				6AAFB50D1ACF2CE90090684F /* ProjectMetaModel.h */,
+				6A24909F1AD44DD90052C1D4 /* ProjectRoleModels.h */,
 				89AD32241A3BA80700ECD505 /* TicketModel.h */,
 				89AD32251A3BA81B00ECD505 /* DiscussionModel.h */,
 				6A1532891AC5D8990018DAEF /* InvitationModel.h */,
 				6A15328A1AC5F17E0018DAEF /* User.h */,
-				6AEE53F51ACE1A110086A1E7 /* ParseModelFactory.h */,
-				6AF038851ACE349D00861C41 /* ParseModelFactory.m */,
+				6AAFB50C1ACF24CC0090684F /* ParseModelFactory */,
 			);
 			name = Models;
 			sourceTree = "<group>";
