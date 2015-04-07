@@ -18,6 +18,7 @@
 
 @protocol ProjectSettingsControllerDelegate <NSObject>
 - (void)didCompleteSettings;
+- (void)didLogout;
 @end;
 
 @interface ProjectsViewController : PFQueryTableViewController <ProjectsViewControllerDelegate, ProjectSettingsControllerDelegate>

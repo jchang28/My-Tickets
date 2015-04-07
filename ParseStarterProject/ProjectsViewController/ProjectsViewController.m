@@ -136,6 +136,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark ProjectSettingsControllerDelegate Obligations
 - (void)didCompleteSettings {
     [self dismissViewControllerAnimated:YES
+                             completion:nil];
+}
+
+- (void)didLogout {
+    [self dismissViewControllerAnimated:YES
                              completion:^{
                                  ParseStarterProjectAppDelegate *appDelegate = (ParseStarterProjectAppDelegate *)[[UIApplication sharedApplication] delegate];
                                  
