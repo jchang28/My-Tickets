@@ -13,6 +13,8 @@
 
 #include "User.h"
 #include "ProjectModel.h"
+#include "ProjectMetaModel.h"
+#include "ProjectRoleModels.h"
 #include "TicketModel.h"
 #include "DiscussionModel.h"
 #include "InvitationModel.h"
