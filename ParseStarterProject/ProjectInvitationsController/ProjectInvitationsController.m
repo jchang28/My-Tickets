@@ -12,6 +12,14 @@
 @implementation ProjectInvitationsController
 
 #pragma mark -
+#pragma mark Parent overrides
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self _setupUI];
+}
+
+#pragma mark -
 #pragma mark Overrides - UITAbleViewDelegate obligations
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -41,6 +49,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                              completion:nil];
     
     //Additional logic for decline...
+    
+}
+
+#pragma mark -
+#pragma mark Privates
+- (void)_setupUI {
+    self.title = @"My Invitations";
     
 }
 
