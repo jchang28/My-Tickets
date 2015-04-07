@@ -9,31 +9,39 @@
 #import "ParseModels.h"
 
 @interface ParseModelFactory : NSObject
-+ FactoryProject:(NSString *)projectName
+
++ (NSString *)MemberRoleNameForProject:(PFObject *)project;
++ (NSString *)MetaRoleNameForProject:(PFObject *)project;
++ (NSString *)AdminRoleNameForProject:(PFObject *)project;
+
++ (PFACL *)FactoryProjectACLUsingMemberRole:(PFRole *)memberRole
+                             andMetaRoles:(PFRole *)metaRole;
+
++ (PFObject *)FactoryProject:(NSString *)projectName
  withDescription:(NSString *)projectDescription
      includeMeta:(BOOL)includeMeta;
 
-+ FactoryTicketForProject:(PFObject *)project
++ (PFObject *)FactoryTicketForProject:(PFObject *)project
     withTicketDescription:(NSString *)ticketDescription
          andTicketDetails:(NSString *)ticketDetails
               includeMeta:(BOOL)includeMeta;
 
-+ FactoryDocumentForProject:(PFObject *)project
++ (PFObject *)FactoryDocumentForProject:(PFObject *)project
           withDocumentTitle:(NSString *)documentTitle
             andDocumentText:(NSString *)documentText
                 includeMeta:(BOOL)includeMeta;
 
-+ FactoryAnnouncementForProject:(PFObject *)project
++ (PFObject *)FactoryAnnouncementForProject:(PFObject *)project
           withAnnouncementTitle:(NSString *)announcementTitle
             andAnnouncementText:(NSString *)announcementText
                     includeMeta:(BOOL)includeMeta;
 
-+ FactoryReportForProject:(PFObject *)project
++ (PFObject *)FactoryReportForProject:(PFObject *)project
           withReportTitle:(NSString *)reportTitle
          withReportFields:(NSArray *)reportFields
        andReportGroupings:(NSArray *)reportGroupings;
 
-+ FactoryCommentsForObject:(PFObject *)projectAsset
++ (PFObject *)FactoryCommentsForObject:(PFObject *)projectAsset
            withCommentText:(NSString *)commentText
            byCommentAuthor:(PFUser *)commentAuthor
                includeMeta:(BOOL)includeMeta;
