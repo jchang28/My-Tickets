@@ -92,5 +92,14 @@
     return project;
 }
 
+- (PFObject *)_createProject {
+    MTLog(@"Factoring object with model factory...");
+    PFObject * project = [ParseModelFactory FactoryProject:self.projectNameTextField.text
+                                           withDescription:self.projectDescriptionTextField.text
+                                               includeMeta:YES];
+    
+    return project;
+}
+
 
 @end

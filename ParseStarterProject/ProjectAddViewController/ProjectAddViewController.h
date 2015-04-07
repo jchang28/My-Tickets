@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "Utils.h"
-#import "ProjectModel.h"
+#import "ParseModelFactory.h"
 
 @protocol ProjectsViewControllerDelegate;
 
