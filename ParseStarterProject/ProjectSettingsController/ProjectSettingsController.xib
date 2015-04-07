@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectSettingsController">
             <connections>
+                <outlet property="userInfoLabel" destination="pE0-9m-4Fa" id="iJY-4A-TuJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,18 +25,47 @@
                         <action selector="ibLogOut:" destination="-1" eventType="touchUpInside" id="YgW-Da-pTF"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pE0-9m-4Fa">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQk-2Z-LoS">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" title="DONE">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="ibDone:" destination="-1" eventType="touchUpInside" id="KJ7-m1-eTC"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="xQk-2Z-LoS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="3Zi-tF-Eu3"/>
                 <constraint firstItem="ZKI-tz-zpI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="PeT-P6-4yl"/>
+                <constraint firstAttribute="trailing" secondItem="pE0-9m-4Fa" secondAttribute="trailing" constant="20" symbolic="YES" id="THi-LC-iSy"/>
+                <constraint firstItem="xQk-2Z-LoS" firstAttribute="top" secondItem="pE0-9m-4Fa" secondAttribute="bottom" constant="8" symbolic="YES" id="l1V-c7-F9L"/>
+                <constraint firstItem="pE0-9m-4Fa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="124" id="oeC-bZ-iGB"/>
+                <constraint firstItem="pE0-9m-4Fa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="qH4-Kc-yHr"/>
                 <constraint firstAttribute="trailing" secondItem="ZKI-tz-zpI" secondAttribute="trailing" constant="8" id="uTo-1x-fjq"/>
                 <constraint firstAttribute="bottom" secondItem="ZKI-tz-zpI" secondAttribute="bottom" constant="8" id="vTz-6j-nic"/>
+                <constraint firstAttribute="trailing" secondItem="xQk-2Z-LoS" secondAttribute="trailing" constant="20" symbolic="YES" id="wrj-tU-5k5"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="ZKI-tz-zpI"/>
+                    <exclude reference="pE0-9m-4Fa"/>
+                    <exclude reference="xQk-2Z-LoS"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="THi-LC-iSy"/>
+                    <exclude reference="oeC-bZ-iGB"/>
+                    <exclude reference="qH4-Kc-yHr"/>
+                    <exclude reference="3Zi-tF-Eu3"/>
+                    <exclude reference="l1V-c7-F9L"/>
+                    <exclude reference="wrj-tU-5k5"/>
                     <exclude reference="PeT-P6-4yl"/>
                     <exclude reference="uTo-1x-fjq"/>
                     <exclude reference="vTz-6j-nic"/>
@@ -44,13 +74,22 @@
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="ZKI-tz-zpI"/>
+                    <include reference="pE0-9m-4Fa"/>
+                    <include reference="xQk-2Z-LoS"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="THi-LC-iSy"/>
+                    <include reference="oeC-bZ-iGB"/>
+                    <include reference="qH4-Kc-yHr"/>
+                    <include reference="3Zi-tF-Eu3"/>
+                    <include reference="l1V-c7-F9L"/>
+                    <include reference="wrj-tU-5k5"/>
                     <include reference="PeT-P6-4yl"/>
                     <include reference="uTo-1x-fjq"/>
                     <include reference="vTz-6j-nic"/>
                 </mask>
             </variation>
+            <point key="canvasLocation" x="400" y="354"/>
         </view>
     </objects>
 </document>

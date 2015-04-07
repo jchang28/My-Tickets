@@ -13,7 +13,9 @@
 @interface ProjectSettingsController : UIViewController
 
 @property (nonatomic, weak) id<ProjectSettingsControllerDelegate> delegate;
+@property (nonatomic, strong) IBOutlet UILabel *userInfoLabel;
 
+- (IBAction)ibDone:(id)sender;
 - (IBAction)ibLogOut:(id)sender;
 
 @end

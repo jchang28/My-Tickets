@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self _setupUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,10 +38,22 @@
 */
 
 #pragma mark -
+#pragma mark Privates
+- (void)_setupUI {
+    NSString *userInfo = [NSString stringWithFormat:@"You are logged in as [%@].", [[PFUser currentUser] username]];
+    
+    self.userInfoLabel.text = userInfo;
+}
+
+#pragma mark -
 #pragma mark - IBActions
+- (void)ibDone:(id)sender {
+    [self.delegate didCompleteSettings];
+}
+
 - (void)ibLogOut:(id)sender {
     [PFUser logOut];
-    [self.delegate didCompleteSettings];
+    [self.delegate didLogout];
 }
 
 @end
