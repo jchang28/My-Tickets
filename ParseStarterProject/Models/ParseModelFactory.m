@@ -81,6 +81,8 @@
                 forKey:MTParseProjectNameKey];
     [project setObject:projectDescription
                 forKey:MTParseProjectDescriptionKey];
+    [project setObject:[PFUser currentUser]
+                forKey:MTParseProjectOwnerKey];
     
     //2.    Create Meta.
     PFObject *projectMeta = [PFObject objectWithClassName:MTParseProjectMetaClassName];
