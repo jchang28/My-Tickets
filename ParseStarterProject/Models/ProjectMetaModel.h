@@ -9,10 +9,17 @@
 #ifndef My_Tickets_MetaModel_h
 #define My_Tickets_MetaModel_h
 
-static NSString * const MTParseMetaClassName = @"";
+static NSString * const MTParseProjectMetaClassName = @"ProjectMeta";
 
-static NSString * const MTParseMetaParentObjectKey = @"";
-static NSString * const MTParseMetaRelationKey = @"";
+static NSString * const MTParseProjectMetaProjectKey = @"Project";
+
+static NSString * const MTParseProjectMetaTicketsRelationKey = @"TicketsRelation";
+
+//Do later....
+static NSString * const MTParseProjectMetaDocumentsRelationKey = @"";
+static NSString * const MTParseProjectMetaAnnouncementsRelationKey = @"";
+static NSString * const MTParseProjectMetaReportsRelationKey = @"";
+
 
 
 
