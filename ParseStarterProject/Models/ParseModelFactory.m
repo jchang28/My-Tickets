@@ -57,6 +57,16 @@
     return projectACL;
 }
 
++ (void)ConfigureProjectACL:(PFObject *)project
+             forMemeberRole:(PFRole *)memberRole
+               andMetaRoles:(PFRole *)metaRole {
+
+
+    
+    
+}
+
+
 /**
  * Needs
  * 1.  Roles
@@ -86,11 +96,17 @@
     
     //2.    Create Meta.
     PFObject *projectMeta = [PFObject objectWithClassName:MTParseProjectMetaClassName];
+    [projectMeta setObject:project
+                    forKey:MTParseProjectMetaProjectKey];
+    
     
     [project setObject:projectMeta
                 forKey:MTParseProjectMetaKey];
     
     //3.    Save synchronously Project along with child meta.
+    //      Note this is after reading on the web that saving the parent
+    //      will also save the child object.
+    //      Refer to evernote's My Parse Book.
     [project save];
     
     //4.    Create Roles.
@@ -98,9 +114,7 @@
     PFRole *memberRole = [PFRole roleWithName:[ParseModelFactory MemberRoleNameForProject:project]];
     PFRole *metaRole = [PFRole roleWithName:[ParseModelFactory MetaRoleNameForProject:project]];
     PFRole *adminRole = [PFRole roleWithName:[ParseModelFactory AdminRoleNameForProject:project]];
-    [memberRole.roles addObject:metaRole];
-    [metaRole.roles addObject:adminRole];
-    
+
     [memberRole save];
     [metaRole save];
     [adminRole save];
