@@ -12,6 +12,9 @@
 #import "ProjectInvitationsController.h"
 #import "ParseModels.h"
 
+#import "ParseObjectDebugger.h"
+#import "GenericInfoController.h"
+
 @interface ProjectContentsController ()
 
 @end
@@ -107,6 +110,10 @@ heightForHeaderInSection:(NSInteger)section {
             cell.textLabel.text = PROJECT_CONTENT_SECTION_INVITATIONS_HEADER;
             break;
             
+        case PROJECT_CONTENT_SECTION_INFO:
+            cell.textLabel.text = PROJECT_CONTENT_SECTION_INFO_HEADER;
+            break;
+            
         default:
             break;
     }
@@ -193,6 +200,16 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
                                                  animated:YES];
         }
             
+            break;
+            
+        case PROJECT_CONTENT_SECTION_INFO: {
+            GenericInfoController *projectInfoController = [[GenericInfoController alloc] initWithNibName:@"GenericInfoController"
+                                                                                                   bundle:nil];
+            projectInfoController.infoText = [ParseObjectDebugger DebugProject:self.project];
+            [self.navigationController pushViewController:projectInfoController
+                                                 animated:YES];
+            
+        }
             break;
             
         default:

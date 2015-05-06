@@ -17,19 +17,39 @@
 + (PFACL *)FactoryProjectACLUsingMemberRole:(PFRole *)memberRole
                              andMetaRoles:(PFRole *)metaRole;
 
+
+#pragma mark -
+#pragma mark Project factories
 + (PFObject *)FactoryProject:(NSString *)projectName
  withDescription:(NSString *)projectDescription
      includeMeta:(BOOL)includeMeta;
 
+/**
+ * 4/22/15 - No error checking for now.
+ * 4/22/15 - Finally 'got' how to use the ACP right, you use
+ * an a SPECIFIC object's (such as a project) ACL and grant/assign read+write
+ * to specific user/role objects.
+ */
++ (void)ConfigureProjectACL:(PFObject *)project
+             forMemeberRole:(PFRole *)memberRole
+               andMetaRoles:(PFRole *)metaRole;
+
+#pragma mark -
+#pragma mark Ticket factories
 + (PFObject *)FactoryTicketForProject:(PFObject *)project
     withTicketDescription:(NSString *)ticketDescription
          andTicketDetails:(NSString *)ticketDetails
               includeMeta:(BOOL)includeMeta;
 
+//+ (void)ConfigureTicketACL:...
+
+#pragma mark -
+#pragma mark Document factories
 + (PFObject *)FactoryDocumentForProject:(PFObject *)project
           withDocumentTitle:(NSString *)documentTitle
             andDocumentText:(NSString *)documentText
                 includeMeta:(BOOL)includeMeta;
+// + (void)ConfigureDocumentACL:...
 
 + (PFObject *)FactoryAnnouncementForProject:(PFObject *)project
           withAnnouncementTitle:(NSString *)announcementTitle

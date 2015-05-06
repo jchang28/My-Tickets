@@ -57,9 +57,15 @@
     return projectACL;
 }
 
+//Note that this is SPECIFIC for the Project's ACL, differnt objects in
+//this app will have different read/write access assigned to the roles.
+//admin role for one project may have read/write access, while for another
+//object may only have read access.
 + (void)ConfigureProjectACL:(PFObject *)project
              forMemeberRole:(PFRole *)memberRole
-               andMetaRoles:(PFRole *)metaRole {
+                forMetaRole:(PFRole *)metaRole
+               forAdminRole:(PFRole *)adminRole {
+    
 
 
     

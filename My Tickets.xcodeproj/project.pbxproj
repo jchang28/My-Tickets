@@ -27,6 +27,9 @@
 		6A235FC01AC4D83700F30135 /* ProjectInviteResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A235FBE1AC4D83700F30135 /* ProjectInviteResultController.m */; };
 		6A235FC11AC4D83700F30135 /* ProjectInviteResultController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A235FBF1AC4D83700F30135 /* ProjectInviteResultController.xib */; };
 		6A5F6D901AA9256A0056261D /* ProjectAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A5F6D8F1AA9256A0056261D /* ProjectAddViewController.xib */; };
+		6A61E31A1AE8838E002C26FC /* GenericInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A61E3181AE8838E002C26FC /* GenericInfoController.m */; };
+		6A61E31B1AE8838E002C26FC /* GenericInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A61E3191AE8838E002C26FC /* GenericInfoController.xib */; };
+		6A61E3201AE8927F002C26FC /* ParseObjectDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A61E31F1AE8927F002C26FC /* ParseObjectDebugger.m */; };
 		6AA3DEAC1A4E0823008697B7 /* MTGenericCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA3DEAB1A4E0823008697B7 /* MTGenericCell.m */; };
 		6AA3DEB11A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA3DEB01A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m */; };
 		6AA3DEB61A4E0D71008697B7 /* MTGenericCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA3DEB41A4E0D71008697B7 /* MTGenericCell.xib */; };
@@ -102,6 +105,11 @@
 		6A24909F1AD44DD90052C1D4 /* ProjectRoleModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProjectRoleModels.h; path = Models/ProjectRoleModels.h; sourceTree = "<group>"; };
 		6A5F6D8C1AA916290056261D /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Common/Utils/Utils.h; sourceTree = "<group>"; };
 		6A5F6D8F1AA9256A0056261D /* ProjectAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectAddViewController.xib; path = ProjectAddViewController/ProjectAddViewController.xib; sourceTree = "<group>"; };
+		6A61E3171AE8838E002C26FC /* GenericInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenericInfoController.h; path = GenericInfoController/GenericInfoController.h; sourceTree = "<group>"; };
+		6A61E3181AE8838E002C26FC /* GenericInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GenericInfoController.m; path = GenericInfoController/GenericInfoController.m; sourceTree = "<group>"; };
+		6A61E3191AE8838E002C26FC /* GenericInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GenericInfoController.xib; path = GenericInfoController/GenericInfoController.xib; sourceTree = "<group>"; };
+		6A61E31E1AE8927F002C26FC /* ParseObjectDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParseObjectDebugger.h; path = Common/Utils/ParseObjectDebugger/ParseObjectDebugger.h; sourceTree = "<group>"; };
+		6A61E31F1AE8927F002C26FC /* ParseObjectDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParseObjectDebugger.m; path = Common/Utils/ParseObjectDebugger/ParseObjectDebugger.m; sourceTree = "<group>"; };
 		6AA3DEAA1A4E0823008697B7 /* MTGenericCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTGenericCell.h; path = Common/UI/MTGenericCell/MTGenericCell.h; sourceTree = "<group>"; };
 		6AA3DEAB1A4E0823008697B7 /* MTGenericCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTGenericCell.m; path = Common/UI/MTGenericCell/MTGenericCell.m; sourceTree = "<group>"; };
 		6AA3DEAF1A4E08BE008697B7 /* MTAutoPreferredWidthLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTAutoPreferredWidthLabel.h; path = Common/UI/MTAutoPreferredWidthLabel/MTAutoPreferredWidthLabel.h; sourceTree = "<group>"; };
@@ -279,8 +287,28 @@
 			isa = PBXGroup;
 			children = (
 				6A5F6D8C1AA916290056261D /* Utils.h */,
+				6A61E31C1AE88753002C26FC /* ParseObjectDebugger */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		6A61E3161AE88279002C26FC /* GenericInfoController */ = {
+			isa = PBXGroup;
+			children = (
+				6A61E3171AE8838E002C26FC /* GenericInfoController.h */,
+				6A61E3181AE8838E002C26FC /* GenericInfoController.m */,
+				6A61E3191AE8838E002C26FC /* GenericInfoController.xib */,
+			);
+			name = GenericInfoController;
+			sourceTree = "<group>";
+		};
+		6A61E31C1AE88753002C26FC /* ParseObjectDebugger */ = {
+			isa = PBXGroup;
+			children = (
+				6A61E31E1AE8927F002C26FC /* ParseObjectDebugger.h */,
+				6A61E31F1AE8927F002C26FC /* ParseObjectDebugger.m */,
+			);
+			name = ParseObjectDebugger;
 			sourceTree = "<group>";
 		};
 		6AA3DEA71A4E077C008697B7 /* View Controllers */ = {
@@ -304,6 +332,7 @@
 		6AA3DEA91A4E0798008697B7 /* Common UI */ = {
 			isa = PBXGroup;
 			children = (
+				6A61E3161AE88279002C26FC /* GenericInfoController */,
 				6AA3DEB71A520343008697B7 /* MTGenericDetailedFieldContoller */,
 				897F49891A6069F3008C1F1C /* MTEditDetailedFieldController */,
 				6AA3DEAE1A4E0832008697B7 /* MTAutoPreferredWidthLabel */,
@@ -590,6 +619,7 @@
 				6AB801B61AA1580D00B3BEA5 /* ProjectSettingsController.xib in Resources */,
 				6A5F6D901AA9256A0056261D /* ProjectAddViewController.xib in Resources */,
 				C4C51B591613CE0800959FDC /* Default@2x.png in Resources */,
+				6A61E31B1AE8838E002C26FC /* GenericInfoController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,10 +657,12 @@
 				6AA3DEBB1A5203C1008697B7 /* MTGenericDetailedFieldController.m in Sources */,
 				09ABC08213A1D52D009C3FCF /* ParseStarterProjectAppDelegate.m in Sources */,
 				6AA3DEB11A4E08BE008697B7 /* MTAutoPreferredWidthLabel.m in Sources */,
+				6A61E31A1AE8838E002C26FC /* GenericInfoController.m in Sources */,
 				6AEE53EC1ACB3CC80086A1E7 /* ProjectInvitationsController.m in Sources */,
 				6AA3DEAC1A4E0823008697B7 /* MTGenericCell.m in Sources */,
 				89D346121A5DF6F90006801C /* ProjectTicketDetailController.m in Sources */,
 				6A235FC01AC4D83700F30135 /* ProjectInviteResultController.m in Sources */,
+				6A61E3201AE8927F002C26FC /* ParseObjectDebugger.m in Sources */,
 				8947AFEF1A6089DB00A75A32 /* ProjectTicketAddController.m in Sources */,
 				89D345FB1A4D42AE0006801C /* ProjectDetailController.m in Sources */,
 				6A1FC6B41A538B2B00E02DD3 /* ProjectContentsController.m in Sources */,
