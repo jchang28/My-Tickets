@@ -10,7 +10,18 @@
 @implementation ParseModelFactory
 
 #pragma mark -
-#pragma mark Setup
+#pragma mark Initializer
+//Should this be in a specific private implementation?
+- (id)init {
+    if(self = [super init]) {
+        
+    }
+    
+    return self;
+}
+
+#pragma mark -
+#pragma mark Singleton factory
 /**
  * Shared instance via singleton pattern.
  * referenced from http://www.galloway.me.uk/tutorials/singleton-classes/.
@@ -46,79 +57,84 @@
 }
 
 #pragma mark -
-#pragma mark Initializer
-- (id)init {
-    if(self = [super init]) {
-        
-    }
-    
-    return self;
-}
-
-
-#pragma mark -
 #pragma mark Role helpers
-- (NSString *)RoleNameforProject:(PFObject *)project
+- (NSString *)_roleNameforProject:(PFObject *)project
                         withRole:(NSString *)roleName {
     static NSString *roleNameFormat = @"%@_%@";
     return [NSString stringWithFormat:roleNameFormat, project.objectId, roleName];
 }
 
-- (NSString *)MemberRoleNameForProject:(PFObject *)project {
-    return [self RoleNameforProject:project
+- (NSString *)memberRoleNameForProject:(PFObject *)project {
+    return [self _roleNameforProject:project
                                         withRole:MTParseProjectRoleMemberPostfix];
 }
 
-- (NSString *)MetaRoleNameForProject:(PFObject *)project {
-    return [self RoleNameforProject:project
+- (NSString *)metaRoleNameForProject:(PFObject *)project {
+    return [self _roleNameforProject:project
                                         withRole:MTParseProjectRoleMetaPostfix];
 }
 
-- (NSString *)AdminRoleNameForProject:(PFObject *)project {
-    return [self RoleNameforProject:project
+- (NSString *)adminRoleNameForProject:(PFObject *)project {
+    return [self _roleNameforProject:project
                                         withRole:MTParseProjectRoleAdminPostfix];
 }
 
+#pragma mark -
+#pragma mark Project Meta related
+- (void)configureProjectMetaACL:(PFACL *)metaACL
+             forMetaRole:(PFRole *)metaRole {
+    
+    [metaACL setReadAccess:YES
+                   forRole:metaRole];
+    [metaACL setWriteAccess:YES
+                    forRole:metaRole];
+}
+
+
+- (PFObject *)factoryProjectMeta:(PFObject *)project {
+    //1.    Create the meta object.
+    PFObject *projectMeta = [PFObject objectWithClassName:MTParseProjectMetaClassName];
+    [projectMeta setObject:project
+                    forKey:MTParseProjectMetaProjectKey];
+    
+    [project setObject:projectMeta
+                forKey:MTParseProjectMetaKey];
+    
+    //3.    Create Roles
+    PFRole *metaRole = [PFRole roleWithName:[self metaRoleNameForProject:project]];
+    [metaRole save];
+    
+    //4.    Create the ACL
+    [self configureProjectMetaACL:projectMeta.ACL
+               forMetaRole:metaRole];
+    
+    [projectMeta save];
+    
+    return projectMeta;
+}
 
 #pragma mark -
 #pragma mark Project related
-- (PFACL *)FactoryProjectACL:(PFObject *)project {
-    PFACL *projectACL = [PFACL ACL];
-    [projectACL setReadAccess:YES
-              forRoleWithName:[self MemberRoleNameForProject:project]];
-    
-    [projectACL setWriteAccess:YES
-               forRoleWithName:[self MetaRoleNameForProject:project]];
-    
-    return projectACL;
-}
-
-- (PFACL *)FactoryProjectACLUsingMemberRole:(PFRole *)memberRole
-                             andMetaRoles:(PFRole *)metaRole {
-    PFACL *projectACL = [PFACL ACL];
-    [projectACL setReadAccess:YES
-                      forRole:memberRole];
-    [projectACL setWriteAccess:YES
-                       forRole:metaRole];
-    
-    return projectACL;
-}
-
 //Note that this is SPECIFIC for the Project's ACL, differnt objects in
 //this app will have different read/write access assigned to the roles.
 //admin role for one project may have read/write access, while for another
 //object may only have read access.
-- (void)ConfigureProjectACL:(PFObject *)project
+- (void)ConfigureProjectACL:(PFACL *)projectACL
              forMemeberRole:(PFRole *)memberRole
-                forMetaRole:(PFRole *)metaRole
                forAdminRole:(PFRole *)adminRole {
     
-
-
+    //1.    Members can read the project objects.
+    [projectACL setReadAccess:YES
+                      forRole:memberRole];
+    [projectACL setWriteAccess:NO
+                       forRole:memberRole];
     
-    
+    //2.    Admins can read and write the project object.
+    [projectACL setReadAccess:YES
+                      forRole:adminRole];
+    [projectACL setWriteAccess:YES
+                       forRole:adminRole];
 }
-
 
 /**
  * Needs
@@ -136,8 +152,9 @@
 - (PFObject *)FactoryProject:(NSString *)projectName
  withDescription:(NSString *)projectDescription
      includeMeta:(BOOL)includeMeta {
-    
-    //1.    Create Project.
+         
+    //1.    Project and meta creation.
+    //1.1    Create Project.
     PFObject *project = [PFObject objectWithClassName:MTParseProjectClassName];
     
     [project setObject:projectName
@@ -147,38 +164,36 @@
     [project setObject:[PFUser currentUser]
                 forKey:MTParseProjectOwnerKey];
     
-    //2.    Create Meta.
+    //1.2.    Create Meta.
     PFObject *projectMeta = [PFObject objectWithClassName:MTParseProjectMetaClassName];
     [projectMeta setObject:project
                     forKey:MTParseProjectMetaProjectKey];
     
-    
+    //1.3.    Set Meta to project.
     [project setObject:projectMeta
                 forKey:MTParseProjectMetaKey];
     
-    //3.    Save synchronously Project along with child meta.
+    //1.4.    Save synchronously Project along with child meta.
     //      Note this is after reading on the web that saving the parent
     //      will also save the child object.
     //      Refer to evernote's My Parse Book.
     [project save];
     
-    //4.    Create Roles.
+    //2.    Create Roles.
     //      May consider splitting this out into its own factory method.
-    PFRole *memberRole = [PFRole roleWithName:[self MemberRoleNameForProject:project]];
-    PFRole *metaRole = [PFRole roleWithName:[self MetaRoleNameForProject:project]];
-    PFRole *adminRole = [PFRole roleWithName:[self AdminRoleNameForProject:project]];
+    PFRole *memberRole = [PFRole roleWithName:[self memberRoleNameForProject:project]];
+    PFRole *adminRole = [PFRole roleWithName:[self adminRoleNameForProject:project]];
 
     [memberRole save];
-    [metaRole save];
     [adminRole save];
-    
-    
+         
+         
     //4a.   Create ACL
-    PFACL *projectACL = [self FactoryProjectACLUsingMemberRole:memberRole
-                                                             andMetaRoles:metaRole];
-    
-    //5.    Assign roles to project and meta's ACL.
-    project.ACL = projectACL;
+    [self ConfigureProjectACL:project.ACL
+               forMemeberRole:memberRole
+                  forMetaRole:metaRole
+                 forAdminRole:adminRole];
+
     [project save];
     
     return project;

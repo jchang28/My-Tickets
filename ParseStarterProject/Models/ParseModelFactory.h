@@ -6,25 +6,31 @@
 //
 //
 #import <Foundation/Foundation.h>
-#import "Utils.h";
+#import "Utils.h"
 #import "ParseModels.h"
 
 @interface ParseModelFactory : NSObject
 
+#pragma mark -
+#pragma mark Singleton factory
 + (id)sharedFactory;
 
 #pragma mark -
 #pragma mark Roles helpers
-- (NSString *)MemberRoleNameForProject:(PFObject *)project;
-- (NSString *)MetaRoleNameForProject:(PFObject *)project;
-- (NSString *)AdminRoleNameForProject:(PFObject *)project;
+- (NSString *)memberRoleNameForProject:(PFObject *)project;
+- (NSString *)metaRoleNameForProject:(PFObject *)project;
+- (NSString *)adminRoleNameForProject:(PFObject *)project;
 
-- (PFACL *)FactoryProjectACLUsingMemberRole:(PFRole *)memberRole
-                             andMetaRoles:(PFRole *)metaRole;
+#pragma mark -
+#pragma mark Project Meta related
+- (void)configureProjectMetaACL:(PFACL *)metaACL
+             forMetaRole:(PFRole *)metaRole;
+
+- (PFObject *)factoryProjectMeta:(PFObject *)project;
 
 
 #pragma mark -
-#pragma mark Project factories
+#pragma mark Project related
 - (PFObject *)FactoryProject:(NSString *)projectName
  withDescription:(NSString *)projectDescription
      includeMeta:(BOOL)includeMeta;
@@ -35,10 +41,13 @@
  * an a SPECIFIC object's (such as a project) ACL and grant/assign read+write
  * to specific user/role objects.
  */
-- (void)ConfigureProjectACL:(PFObject *)project
+- (void)ConfigureProjectACL:(PFACL *)projectACL
              forMemeberRole:(PFRole *)memberRole
                 forMetaRole:(PFRole *)metaRole
                forAdminRole:(PFRole *)adminRole;
+
+- (void)configureProjectMetaACL:(PFACL *)metaACL
+             forMetaRole:(PFRole *)metaRole;
 
 #pragma mark -
 #pragma mark Ticket factories
