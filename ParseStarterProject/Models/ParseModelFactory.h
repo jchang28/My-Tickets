@@ -6,21 +6,26 @@
 //
 //
 #import <Foundation/Foundation.h>
+#import "Utils.h";
 #import "ParseModels.h"
 
 @interface ParseModelFactory : NSObject
 
-+ (NSString *)MemberRoleNameForProject:(PFObject *)project;
-+ (NSString *)MetaRoleNameForProject:(PFObject *)project;
-+ (NSString *)AdminRoleNameForProject:(PFObject *)project;
++ (id)sharedFactory;
 
-+ (PFACL *)FactoryProjectACLUsingMemberRole:(PFRole *)memberRole
+#pragma mark -
+#pragma mark Roles helpers
+- (NSString *)MemberRoleNameForProject:(PFObject *)project;
+- (NSString *)MetaRoleNameForProject:(PFObject *)project;
+- (NSString *)AdminRoleNameForProject:(PFObject *)project;
+
+- (PFACL *)FactoryProjectACLUsingMemberRole:(PFRole *)memberRole
                              andMetaRoles:(PFRole *)metaRole;
 
 
 #pragma mark -
 #pragma mark Project factories
-+ (PFObject *)FactoryProject:(NSString *)projectName
+- (PFObject *)FactoryProject:(NSString *)projectName
  withDescription:(NSString *)projectDescription
      includeMeta:(BOOL)includeMeta;
 
@@ -30,38 +35,39 @@
  * an a SPECIFIC object's (such as a project) ACL and grant/assign read+write
  * to specific user/role objects.
  */
-+ (void)ConfigureProjectACL:(PFObject *)project
+- (void)ConfigureProjectACL:(PFObject *)project
              forMemeberRole:(PFRole *)memberRole
-               andMetaRoles:(PFRole *)metaRole;
+                forMetaRole:(PFRole *)metaRole
+               forAdminRole:(PFRole *)adminRole;
 
 #pragma mark -
 #pragma mark Ticket factories
-+ (PFObject *)FactoryTicketForProject:(PFObject *)project
+- (PFObject *)FactoryTicketForProject:(PFObject *)project
     withTicketDescription:(NSString *)ticketDescription
          andTicketDetails:(NSString *)ticketDetails
               includeMeta:(BOOL)includeMeta;
 
-//+ (void)ConfigureTicketACL:...
+//- (void)ConfigureTicketACL:...
 
 #pragma mark -
 #pragma mark Document factories
-+ (PFObject *)FactoryDocumentForProject:(PFObject *)project
+- (PFObject *)FactoryDocumentForProject:(PFObject *)project
           withDocumentTitle:(NSString *)documentTitle
             andDocumentText:(NSString *)documentText
                 includeMeta:(BOOL)includeMeta;
-// + (void)ConfigureDocumentACL:...
+// - (void)ConfigureDocumentACL:...
 
-+ (PFObject *)FactoryAnnouncementForProject:(PFObject *)project
+- (PFObject *)FactoryAnnouncementForProject:(PFObject *)project
           withAnnouncementTitle:(NSString *)announcementTitle
             andAnnouncementText:(NSString *)announcementText
                     includeMeta:(BOOL)includeMeta;
 
-+ (PFObject *)FactoryReportForProject:(PFObject *)project
+- (PFObject *)FactoryReportForProject:(PFObject *)project
           withReportTitle:(NSString *)reportTitle
          withReportFields:(NSArray *)reportFields
        andReportGroupings:(NSArray *)reportGroupings;
 
-+ (PFObject *)FactoryCommentsForObject:(PFObject *)projectAsset
+- (PFObject *)FactoryCommentsForObject:(PFObject *)projectAsset
            withCommentText:(NSString *)commentText
            byCommentAuthor:(PFUser *)commentAuthor
                includeMeta:(BOOL)includeMeta;

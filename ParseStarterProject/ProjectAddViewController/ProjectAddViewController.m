@@ -94,9 +94,11 @@
 
 - (PFObject *)_createProject {
     MTLog(@"Factoring object with model factory...");
-    PFObject * project = [ParseModelFactory FactoryProject:self.projectNameTextField.text
-                                           withDescription:self.projectDescriptionTextField.text
-                                               includeMeta:YES];
+    ParseModelFactory *sharedFactory = [ParseModelFactory sharedFactory];
+    
+    PFObject * project = [sharedFactory FactoryProject:self.projectNameTextField.text
+                                       withDescription:self.projectDescriptionTextField.text
+                                           includeMeta:YES];
     
     return project;
 }
