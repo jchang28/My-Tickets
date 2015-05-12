@@ -39,6 +39,7 @@
 		6AB801B61AA1580D00B3BEA5 /* ProjectSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB801B41AA1580D00B3BEA5 /* ProjectSettingsController.xib */; };
 		6AC87D551AC4BC6A008EC6EA /* ProjectInviteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AC87D531AC4BC6A008EC6EA /* ProjectInviteController.m */; };
 		6AC87D561AC4BC6A008EC6EA /* ProjectInviteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AC87D541AC4BC6A008EC6EA /* ProjectInviteController.xib */; };
+		6AE74C121B02A8CB00CF11EB /* PFObject+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE74C111B02A8CB00CF11EB /* PFObject+Debug.m */; };
 		6AEE53EC1ACB3CC80086A1E7 /* ProjectInvitationsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE53EB1ACB3CC80086A1E7 /* ProjectInvitationsController.m */; };
 		6AEE53F11ACB4F5C0086A1E7 /* ProjectInvitationActionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEE53EF1ACB4F5C0086A1E7 /* ProjectInvitationActionController.m */; };
 		6AEE53F21ACB4F5C0086A1E7 /* ProjectInvitationActionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AEE53F01ACB4F5C0086A1E7 /* ProjectInvitationActionController.xib */; };
@@ -125,6 +126,8 @@
 		6AC87D521AC4BC6A008EC6EA /* ProjectInviteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectInviteController.h; path = ProjectInviteController/ProjectInviteController.h; sourceTree = "<group>"; };
 		6AC87D531AC4BC6A008EC6EA /* ProjectInviteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectInviteController.m; path = ProjectInviteController/ProjectInviteController.m; sourceTree = "<group>"; };
 		6AC87D541AC4BC6A008EC6EA /* ProjectInviteController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectInviteController.xib; path = ProjectInviteController/ProjectInviteController.xib; sourceTree = "<group>"; };
+		6AE74C101B02A8CB00CF11EB /* PFObject+Debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PFObject+Debug.h"; path = "Common/Utils/PFObject+Debug/PFObject+Debug.h"; sourceTree = "<group>"; };
+		6AE74C111B02A8CB00CF11EB /* PFObject+Debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PFObject+Debug.m"; path = "Common/Utils/PFObject+Debug/PFObject+Debug.m"; sourceTree = "<group>"; };
 		6AEE53EA1ACB3CC80086A1E7 /* ProjectInvitationsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectInvitationsController.h; path = ProjectInvitationsController/ProjectInvitationsController.h; sourceTree = "<group>"; };
 		6AEE53EB1ACB3CC80086A1E7 /* ProjectInvitationsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectInvitationsController.m; path = ProjectInvitationsController/ProjectInvitationsController.m; sourceTree = "<group>"; };
 		6AEE53EE1ACB4F5C0086A1E7 /* ProjectInvitationActionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectInvitationActionController.h; path = ProjectInvitationActionController/ProjectInvitationActionController.h; sourceTree = "<group>"; };
@@ -288,6 +291,7 @@
 			children = (
 				6A5F6D8C1AA916290056261D /* Utils.h */,
 				6A61E31C1AE88753002C26FC /* ParseObjectDebugger */,
+				6AE74C131B02A8D800CF11EB /* PFObject+Debug */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -399,6 +403,15 @@
 				6A235FBC1AC4D60D00F30135 /* ProjectinviteResultController */,
 			);
 			name = ProjectInviteController;
+			sourceTree = "<group>";
+		};
+		6AE74C131B02A8D800CF11EB /* PFObject+Debug */ = {
+			isa = PBXGroup;
+			children = (
+				6AE74C101B02A8CB00CF11EB /* PFObject+Debug.h */,
+				6AE74C111B02A8CB00CF11EB /* PFObject+Debug.m */,
+			);
+			name = "PFObject+Debug";
 			sourceTree = "<group>";
 		};
 		6AEE53E91ACB3C0A0086A1E7 /* ProjectInvitationsController */ = {
@@ -661,6 +674,7 @@
 				6AEE53EC1ACB3CC80086A1E7 /* ProjectInvitationsController.m in Sources */,
 				6AA3DEAC1A4E0823008697B7 /* MTGenericCell.m in Sources */,
 				89D346121A5DF6F90006801C /* ProjectTicketDetailController.m in Sources */,
+				6AE74C121B02A8CB00CF11EB /* PFObject+Debug.m in Sources */,
 				6A235FC01AC4D83700F30135 /* ProjectInviteResultController.m in Sources */,
 				6A61E3201AE8927F002C26FC /* ParseObjectDebugger.m in Sources */,
 				8947AFEF1A6089DB00A75A32 /* ProjectTicketAddController.m in Sources */,

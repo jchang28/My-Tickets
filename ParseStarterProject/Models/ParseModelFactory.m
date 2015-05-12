@@ -5,7 +5,8 @@
 //  Created by Jeff@Level3 on 4/2/15.
 //
 //
-#include "ParseModelFactory.h"
+#import "ParseModelFactory.h"
+#import "PFObject+Debug.h"
 
 @implementation ParseModelFactory
 
@@ -112,6 +113,7 @@
                forMetaRole:metaRole];
     
     [projectMeta save];
+    [projectMeta debugID:@"projectMeta"];
     
     return projectMeta;
 }
@@ -182,6 +184,7 @@
     //      Note that the projectMeta is also saved due to it is a child of
     //      the project.
     [project save];
+    [project debugID:@"Project"];
     
     //2.    Create Roles.
     //      May consider splitting this out into its own factory method.
@@ -192,7 +195,10 @@
 
     //2.1   Saving role objects first.
     [memberRole save];
+    [memberRole debugID:@"memberRole"];
+    
     [adminRole save];
+    [adminRole debugID:@"adminRole"];
          
          
     //4a.   Create ACL
