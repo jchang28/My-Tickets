@@ -94,8 +94,11 @@
 - (PFObject *)factoryProjectMeta:(PFObject *)project {
     //1.    Create the meta object.
     PFObject *projectMeta = [PFObject objectWithClassName:MTParseProjectMetaClassName];
-    [projectMeta setObject:project
-                    forKey:MTParseProjectMetaProjectKey];
+
+    //5/12/15 - Decided not to have circular reference; can add back in or do
+    //workaround if needed.
+//    [projectMeta setObject:project
+//                    forKey:MTParseProjectMetaProjectKey];
     
     [project setObject:projectMeta
                 forKey:MTParseProjectMetaKey];
@@ -119,7 +122,7 @@
 //this app will have different read/write access assigned to the roles.
 //admin role for one project may have read/write access, while for another
 //object may only have read access.
-- (void)ConfigureProjectACL:(PFACL *)projectACL
+- (void)configureProjectACL:(PFACL *)projectACL
              forMemeberRole:(PFRole *)memberRole
                forAdminRole:(PFRole *)adminRole {
     
@@ -148,10 +151,18 @@
  * - Meta to Documents <- can do later
  * - Meta to Announcements <- can do later
  * - Meta to Reports
+ *
+ * 5/12/15 - Decided not to have a pointer in the meta back to the original
+ * object until needed due to the fact of complications to circular dependency
+ * and ease of saving/api call reduction.
+ * https://www.evernote.com/shard/s44/nl/4887974/819f984e-71d9-4573-a378-cbda4fd31c42/
  */
-- (PFObject *)FactoryProject:(NSString *)projectName
+- (PFObject *)factoryProject:(NSString *)projectName
  withDescription:(NSString *)projectDescription
      includeMeta:(BOOL)includeMeta {
+    
+    //0.    Default ACL is already previously configured in the singleton
+    //      factory; see sharedFactory.
          
     //1.    Project and meta creation.
     //1.1    Create Project.
@@ -165,35 +176,31 @@
                 forKey:MTParseProjectOwnerKey];
     
     //1.2.    Create Meta.
-    PFObject *projectMeta = [PFObject objectWithClassName:MTParseProjectMetaClassName];
-    [projectMeta setObject:project
-                    forKey:MTParseProjectMetaProjectKey];
-    
-    //1.3.    Set Meta to project.
-    [project setObject:projectMeta
-                forKey:MTParseProjectMetaKey];
-    
-    //1.4.    Save synchronously Project along with child meta.
-    //      Note this is after reading on the web that saving the parent
-    //      will also save the child object.
-    //      Refer to evernote's My Parse Book.
+    PFObject *projectMeta = [self factoryProjectMeta:project];
+
+    //1.4.    Save synchronously Project
+    //      Note that the projectMeta is also saved due to it is a child of
+    //      the project.
     [project save];
     
     //2.    Create Roles.
     //      May consider splitting this out into its own factory method.
+    //      The role's ACL is defined by the default ACL template in the
+    //      sharedFactory.
     PFRole *memberRole = [PFRole roleWithName:[self memberRoleNameForProject:project]];
     PFRole *adminRole = [PFRole roleWithName:[self adminRoleNameForProject:project]];
 
+    //2.1   Saving role objects first.
     [memberRole save];
     [adminRole save];
          
          
     //4a.   Create ACL
-    [self ConfigureProjectACL:project.ACL
+    [self configureProjectACL:project.ACL
                forMemeberRole:memberRole
-                  forMetaRole:metaRole
                  forAdminRole:adminRole];
 
+    //This second save is for updatig the ACL.
     [project save];
     
     return project;

@@ -11,7 +11,9 @@
 
 static NSString * const MTParseProjectMetaClassName = @"ProjectMeta";
 
-static NSString * const MTParseProjectMetaProjectKey = @"Project";
+//5/12/15 - Decided not to have ciruclar dependency due to complications
+//and api call reduction; can put back if needed in the future... -jchang
+//static NSString * const MTParseProjectMetaProjectKey = @"Project";
 
 static NSString * const MTParseProjectMetaTicketsRelationKey = @"TicketsRelation";
 
