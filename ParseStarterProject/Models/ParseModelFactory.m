@@ -59,25 +59,25 @@
 
 #pragma mark -
 #pragma mark Role helpers
-- (NSString *)_roleNameforProject:(PFObject *)project
-                        withRole:(NSString *)roleName {
+- (NSString *)_roleNameforObject:(PFObject *)project
+                        withRoleName:(NSString *)roleName {
     static NSString *roleNameFormat = @"%@_%@";
     return [NSString stringWithFormat:roleNameFormat, project.objectId, roleName];
 }
 
 - (NSString *)memberRoleNameForProject:(PFObject *)project {
-    return [self _roleNameforProject:project
-                                        withRole:MTParseProjectRoleMemberPostfix];
+    return [self _roleNameforObject:project
+                            withRoleName:MTParseProjectRoleMemberPostfix];
 }
 
-- (NSString *)metaRoleNameForProject:(PFObject *)project {
-    return [self _roleNameforProject:project
-                                        withRole:MTParseProjectRoleMetaPostfix];
+- (NSString *)metaRoleNameForProjectMeta:(PFObject *)projectMeta {
+    return [self _roleNameforObject:projectMeta
+                            withRoleName:MTParseProjectMetaRolePostfix];
 }
 
 - (NSString *)adminRoleNameForProject:(PFObject *)project {
-    return [self _roleNameforProject:project
-                                        withRole:MTParseProjectRoleAdminPostfix];
+    return [self _roleNameforObject:project
+                            withRoleName:MTParseProjectRoleAdminPostfix];
 }
 
 #pragma mark -
@@ -95,7 +95,12 @@
 - (PFObject *)factoryProjectMeta:(PFObject *)project {
     //1.    Create the meta object.
     PFObject *projectMeta = [PFObject objectWithClassName:MTParseProjectMetaClassName];
-
+    
+    //2.    Forcing a save to generate an object ID, becuase the meta role
+    //      needs to use the ID for the name.
+    [projectMeta save];
+    [projectMeta debugID:@"projectMeta"];
+    
     //5/12/15 - Decided not to have circular reference; can add back in or do
     //workaround if needed.
 //    [projectMeta setObject:project
@@ -105,15 +110,13 @@
                 forKey:MTParseProjectMetaKey];
     
     //3.    Create Roles
-    PFRole *metaRole = [PFRole roleWithName:[self metaRoleNameForProject:project]];
+    PFRole *metaRole = [PFRole roleWithName:[self metaRoleNameForProjectMeta:projectMeta]];
     [metaRole save];
+    [metaRole debugID:@"metaRole"];
     
     //4.    Create the ACL
     [self configureProjectMetaACL:projectMeta.ACL
-               forMetaRole:metaRole];
-    
-    [projectMeta save];
-    [projectMeta debugID:@"projectMeta"];
+                      forMetaRole:metaRole];
     
     return projectMeta;
 }

@@ -18,7 +18,7 @@
 #pragma mark -
 #pragma mark Roles helpers
 - (NSString *)memberRoleNameForProject:(PFObject *)project;
-- (NSString *)metaRoleNameForProject:(PFObject *)project;
+- (NSString *)metaRoleNameForProjectMeta:(PFObject *)projectMeta;
 - (NSString *)adminRoleNameForProject:(PFObject *)project;
 
 #pragma mark -

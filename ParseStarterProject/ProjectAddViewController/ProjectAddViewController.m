@@ -42,10 +42,10 @@
     NSLog(@"Project Description [%@].", self.projectDescriptionTextField.text);
     
     //0.    Logic to create project on parse.
-    PFObject *project = [self _createProjectAndSave];
+    //PFObject *project = [self _createProjectAndSave];
+    PFObject *project = [self _createProject];
     
     [self.delegate didAddProject:project];
-    
 }
 
 - (IBAction)ibCancel:(id)sender {
@@ -93,6 +93,7 @@
 }
 
 - (PFObject *)_createProject {
+    MTLog(@"_createProject entered...");
     MTLog(@"Factoring object with model factory...");
     ParseModelFactory *sharedFactory = [ParseModelFactory sharedFactory];
     
