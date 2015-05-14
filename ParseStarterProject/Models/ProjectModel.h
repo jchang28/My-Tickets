@@ -15,7 +15,7 @@ static NSString * const MTParseProjectNameKey = @"ProjectName";
 static NSString * const MTParseProjectDescriptionKey = @"ProjectDescription";
 static NSString * const MTParseProjectOwnerKey = @"ProjectOwner";
 
-static NSString * const MTParseProjectMetaKey = @"ProjectMeta";
+static NSString * const MTParseProjectMetaKey = @"ProjectMeta";
 
 
 
