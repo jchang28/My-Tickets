@@ -10,7 +10,7 @@
 #define My_Tickets_ProjectRoleModels_h
 
 static NSString * const MTParseProjectRoleMemberPostfix = @"Member";
-static NSString * const MTParseProjectRoleMetaPostfix = @"Meta";
+static NSString * const MTParseProjectMetaRolePostfix = @"Meta";
 static NSString * const MTParseProjectRoleAdminPostfix = @"Admin";
 
 #endif
