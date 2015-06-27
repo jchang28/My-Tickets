@@ -8,6 +8,7 @@
 
 #import "ProjectInvitationActionController.h"
 #import "ProjectInvitationsController.h"
+#import "Utils.h"
 
 @interface ProjectInvitationActionController ()
 
@@ -38,6 +39,12 @@
 #pragma mark -
 #pragma mark IBActions
 - (IBAction)ibAcceptInvitation:(id)sender {
+    MTLog(@"Calling Parse Cloud function membershipAcceptInvitation...");
+    
+    NSDictionary *jasonResponse = [PFCloud callFunction:@"membershipAcceptInvitation"
+                                         withParameters: @{@"invitationId" : self.invitation.objectId}];
+    
+    
     [self.delegate didAcceptInvitation];
 }
 

@@ -27,6 +27,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ProjectInvitationActionController *invitationActionController = [[ProjectInvitationActionController alloc] initWithNibName:@"ProjectInvitationActionController"
                                                                                                                         bundle:nil];
+    invitationActionController.invitation = invitation;
+    
     invitationActionController.delegate = self;
     [self presentViewController:invitationActionController
                        animated:YES
